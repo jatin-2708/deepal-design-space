@@ -1,0 +1,205 @@
+import { motion } from "framer-motion";
+import { Layout } from "@/components/Layout";
+import { SectionHeading } from "@/components/SectionHeading";
+import { SkillTag } from "@/components/SkillTag";
+import { GraduationCap, Award, Briefcase } from "lucide-react";
+
+const skills = [
+  "Design Thinking",
+  "Human-Centered Design",
+  "User Research & Personas",
+  "Information Architecture",
+  "Wireframing & Prototyping",
+  "Visual & Interface Design",
+  "Usability Testing",
+  "Data Analysis & Visualization",
+  "Surveys & Insight Synthesis",
+];
+
+const tools = [
+  { name: "Figma", category: "UI/UX Design" },
+  { name: "Framer", category: "UI/UX Design" },
+  { name: "Miro", category: "Research & Ideation" },
+  { name: "Notion", category: "Research & Ideation" },
+  { name: "Adobe Photoshop", category: "Visual Design" },
+  { name: "Illustrator", category: "Visual Design" },
+  { name: "After Effects", category: "Motion & 3D" },
+  { name: "Blender", category: "Motion & 3D" },
+  { name: "HTML/CSS", category: "Front-End" },
+];
+
+const certifications = [
+  "NewGen Certification in AI Innovation & Entrepreneurship",
+  "NewGen Iconography Certification",
+  "1st Runner-Up — Sandbox Hackathon (Parallel Beyond)",
+  "1st Runner-Up — Game Design (Ragpickers)",
+  "Calligraphy Foundation Certification",
+  "AIR 320 — NID Prelims (25,000+ candidates)",
+  "AIR 476 — UCEED (15,000+ candidates)",
+];
+
+export default function About() {
+  return (
+    <Layout>
+      <section className="pt-32 pb-20 bg-gradient-hero">
+        <div className="container max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="font-display text-5xl md:text-6xl mb-4">About Me</h1>
+            <p className="text-xl text-muted-foreground">
+              Deepal Gupta · UI/UX Designer
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Bio Section */}
+      <section className="py-16">
+        <div className="container max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="prose prose-lg max-w-none"
+          >
+            <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+              Hi, I'm Deepal, a UI/UX designer with three years of experience working across 
+              domains such as finance, wellness, logistics, B2B, and SaaS. These experiences 
+              have helped me understand how user needs shift across contexts and how thoughtful 
+              design adapts to those changes.
+            </p>
+            <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+              My work is strongly grounded in user research, interaction design, information 
+              architecture, service design, and usability testing. I enjoy exploring market 
+              and product trends, analyzing data through surveys and research, and translating 
+              insights into clear, meaningful user experiences.
+            </p>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Alongside building my technical skills, I've been intentionally working on my 
+              communication—speaking up more, sharing my thinking out loud, and engaging 
+              actively with people. I see collaboration and everyday conversations as an 
+              essential part of my growth as a designer.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-16 bg-cream">
+        <div className="container max-w-4xl mx-auto px-6">
+          <SectionHeading className="mb-8">Core Skills</SectionHeading>
+          <div className="flex flex-wrap gap-3">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <SkillTag>{skill}</SkillTag>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Section */}
+      <section className="py-16">
+        <div className="container max-w-4xl mx-auto px-6">
+          <SectionHeading className="mb-8">Tools</SectionHeading>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {tools.map((tool, index) => (
+              <motion.div
+                key={tool.name}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="p-4 rounded-xl bg-white shadow-soft hover:shadow-card transition-all"
+              >
+                <p className="font-medium text-foreground">{tool.name}</p>
+                <p className="text-xs text-muted-foreground">{tool.category}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="py-16 bg-gradient-mint">
+        <div className="container max-w-4xl mx-auto px-6">
+          <SectionHeading icon={<GraduationCap className="h-8 w-8" />} className="mb-8">
+            Education
+          </SectionHeading>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 rounded-2xl bg-white shadow-soft"
+          >
+            <h3 className="font-display text-xl mb-1">Bachelor of Design (B.Des) — UI/UX Design</h3>
+            <p className="text-muted-foreground mb-2">Chitkara University, Chandigarh</p>
+            <p className="text-sm text-muted-foreground">2023 – 2027 | CGPA: 9.17 / 10</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-16">
+        <div className="container max-w-4xl mx-auto px-6">
+          <SectionHeading icon={<Award className="h-8 w-8" />} className="mb-8">
+            Certifications & Achievements
+          </SectionHeading>
+          <div className="space-y-3">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="p-4 rounded-xl bg-white shadow-soft flex items-start gap-3"
+              >
+                <span className="text-primary">✦</span>
+                <p className="text-foreground">{cert}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open To Section */}
+      <section className="py-16 bg-gradient-coral">
+        <div className="container max-w-4xl mx-auto px-6">
+          <SectionHeading icon={<Briefcase className="h-8 w-8" />} className="mb-8">
+            Currently Open To
+          </SectionHeading>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "UI/UX Designer roles",
+              "Product Designer roles",
+              "UX Research opportunities",
+              "Freelance projects",
+              "Internships",
+              "Collaborations",
+            ].map((item, index) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <SkillTag variant="highlight">{item}</SkillTag>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}
