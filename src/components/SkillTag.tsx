@@ -7,9 +7,9 @@ interface SkillTagProps {
 }
 
 const variantClasses = {
-  default: "bg-white text-foreground shadow-soft",
+  default: "bg-white text-foreground shadow-soft border border-border/50",
   tool: "bg-muted text-muted-foreground",
-  highlight: "bg-coral-light text-primary",
+  highlight: "bg-navy-light text-primary border border-primary/20",
 };
 
 export function SkillTag({ children, variant = "default" }: SkillTagProps) {

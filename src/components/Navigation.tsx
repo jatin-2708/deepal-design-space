@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -24,21 +24,32 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when window resizes to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-3xl"
+      className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6 md:pt-6"
     >
       <nav
-        className={`flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-300 ${
+        className={`mx-auto max-w-4xl flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl transition-all duration-300 ${
           isScrolled
-            ? "bg-white/90 backdrop-blur-md shadow-nav"
-            : "bg-gradient-nav backdrop-blur-sm shadow-soft"
+            ? "bg-white/95 backdrop-blur-md shadow-nav"
+            : "bg-white/80 backdrop-blur-sm shadow-soft"
         }`}
       >
-        <NavLink to="/" className="font-display text-xl tracking-tight text-foreground">
+        <NavLink to="/" className="font-display text-lg sm:text-xl tracking-tight text-foreground">
           DEEPAL
         </NavLink>
 
@@ -49,9 +60,9 @@ export function Navigation() {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  `px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? "text-primary bg-coral-light"
+                      ? "text-primary bg-navy-light"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`
                 }
@@ -61,9 +72,9 @@ export function Navigation() {
             </li>
           ))}
           <li className="ml-2">
-            <Button variant="outline" size="sm" className="rounded-xl gap-2">
+            <Button variant="outline" size="sm" className="rounded-xl gap-2 border-primary/20 hover:bg-navy-light">
               <FileText className="h-4 w-4" />
-              Resume
+              <span className="hidden lg:inline">Resume</span>
             </Button>
           </li>
         </ul>
@@ -72,46 +83,50 @@ export function Navigation() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-xl hover:bg-muted transition-colors"
+          aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden mt-2 p-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-card"
-        >
-          <ul className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <li key={item.path}>
-                <NavLink
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                      isActive
-                        ? "text-primary bg-coral-light"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-2 mx-auto max-w-4xl p-4 bg-white/98 backdrop-blur-md rounded-2xl shadow-card"
+          >
+            <ul className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                        isActive
+                          ? "text-primary bg-navy-light"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li className="mt-2 pt-2 border-t border-border">
+                <Button variant="outline" size="sm" className="w-full rounded-xl gap-2 border-primary/20">
+                  <FileText className="h-4 w-4" />
+                  Resume
+                </Button>
               </li>
-            ))}
-            <li className="mt-2">
-              <Button variant="outline" size="sm" className="w-full rounded-xl gap-2">
-                <FileText className="h-4 w-4" />
-                Resume
-              </Button>
-            </li>
-          </ul>
-        </motion.div>
-      )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
