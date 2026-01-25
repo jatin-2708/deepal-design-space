@@ -8,29 +8,28 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Sakha Banking — Omnichannel Experience",
-    description: "Designed a multi-touchpoint banking system integrating physical and digital channels, addressing accessibility, diverse user groups, and system-level consistency.",
-    tags: ["Interaction/UX design", "Banking"],
-    gradient: "coral" as const,
+    title: "PrintFast",
+    description: "Improved a campus printing workflow. Balanced student and vendor requirements. Enhanced usability, clarity, and operational efficiency.",
+    tags: ["Interaction Design", "In-campus Printing process"],
+    gradient: "cyan" as const,
   },
   {
-    title: "Cooup — Service Experience Design",
-    description: "Conceptualized a multi-stakeholder wellness ecosystem using service blueprints and end-to-end experience flows beyond screens.",
-    tags: ["Product Design", "Service Design"],
+    title: "COOUP",
+    description: "Conceptualized a multi-stakeholder wellness ecosystem. Developed service blueprints and experience flows beyond screens.",
+    tags: ["Service Design", "Wellness and Community"],
     gradient: "mint" as const,
   },
   {
-    title: "PrintFast — Interaction Design",
-    description: "Redesigned a campus printing workflow by balancing student and vendor needs, improving usability, efficiency, and task completion.",
-    tags: ["Interaction Design", "UX"],
-    gradient: "lavender" as const,
+    title: "DYME",
+    description: "Worked in rapid sprint cycles under tight deadlines. Balanced feasibility, prioritization, and user needs. Delivered a structured end-to-end user experience.",
+    tags: ["design Project", "Focus and Productivity"],
+    gradient: "peach" as const,
   },
   {
-    title: "DYME — Design Sprint Project",
-    description: "Worked in rapid sprint cycles under tight deadlines, delivering structured user flows and interaction-focused solutions through collaborative decision-making.",
-    tags: ["Product Design", "Sprint"],
+    title: "SAKHA",
+    description: "Created a multi-touchpoint banking system integrating physical and digital channels. Addressed diverse user groups, accessibility needs, and operational constraints.",
+    tags: ["Omnichannel", "Cash Transaction"],
     gradient: "coral" as const,
-    award: true,
   },
 ];
 
@@ -44,58 +43,78 @@ const designValues = [
 export default function Index() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 pb-16 bg-gradient-hero">
-        <div className="container max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-tight mb-6 text-balance">
-              I see, I think, I design
-              <br />
-              <span className="italic">then I overthink.</span>
-            </h1>
-          </motion.div>
+      {/* Hero Section - New style matching reference */}
+      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-background">
+        <div className="container max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="order-2 lg:order-1"
+            >
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-6">
+                HI, I am
+                <br />
+                <span className="text-foreground">Deepal Gupta</span>
+              </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
-          >
-            Designing with intent, structure, and clarity.
-            <br />A thoughtful UI/UX designer and researcher.
-          </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="inline-block px-5 py-2.5 rounded-full bg-accent/20 text-accent-foreground mb-6"
+              >
+                <span className="text-sm font-medium text-foreground">UI/UX Designer</span>
+              </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-3"
-          >
-            <span className="px-4 py-2 rounded-xl bg-coral-light text-primary font-medium text-sm">
-              3+ years of experience
-            </span>
-            <span className="px-4 py-2 rounded-xl bg-white shadow-soft text-foreground font-medium text-sm">
-              UI/UX Designer
-            </span>
-          </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-lg"
+              >
+                This portfolio reflects how <span className="text-highlight-red font-medium">I think</span>, how <span className="text-highlight-blue font-medium">I work</span>,
+                <br className="hidden sm:block" />
+                and how <span className="text-highlight-red font-medium">I translate</span> complexity into meaningful
+                <br className="hidden sm:block" />
+                user experiences.
+              </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12"
-          >
-            <Link to="/projects">
-              <Button size="lg" className="rounded-xl gap-2 shadow-soft hover:shadow-card">
-                View My Work
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="mt-8"
+              >
+                <Link to="/projects">
+                  <Button size="lg" className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-primary hover:bg-primary/90">
+                    View My Work
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Right - Illustration Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            >
+              <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl bg-gradient-to-br from-muted/50 to-muted border-2 border-dashed border-border flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted-foreground/10 flex items-center justify-center">
+                    <span className="text-2xl">👤</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm">Your illustration here</p>
+                  <p className="text-muted-foreground/60 text-xs mt-1">Recommended: 420×520px</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -115,7 +134,7 @@ export default function Index() {
             into meaningful user experiences.
           </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
             {designValues.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -123,9 +142,9 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-2xl bg-white shadow-soft hover:shadow-card transition-all"
+                className="p-5 md:p-6 rounded-2xl bg-white shadow-soft hover:shadow-card transition-all"
               >
-                <h3 className="font-display text-xl mb-2">{value.title}</h3>
+                <h3 className="font-display text-lg md:text-xl mb-2">{value.title}</h3>
                 <p className="text-muted-foreground text-sm">{value.description}</p>
               </motion.div>
             ))}
@@ -135,9 +154,9 @@ export default function Index() {
 
       {/* Selected Projects Section */}
       <section className="py-20">
-        <div className="container max-w-5xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-12">
-            <SectionHeading icon={<Sparkles className="h-8 w-8" />}>
+        <div className="container max-w-6xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
+            <SectionHeading icon={<Sparkles className="h-6 w-6 md:h-8 md:w-8" />}>
               Selected Projects
             </SectionHeading>
             <Link
@@ -148,7 +167,7 @@ export default function Index() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
@@ -157,17 +176,17 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-coral">
+      <section className="py-20 bg-gradient-peach">
         <div className="container max-w-3xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Currently Open To</h2>
-            <p className="text-muted-foreground mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4">Currently Open To</h2>
+            <p className="text-muted-foreground mb-8 text-sm sm:text-base">
               UI/UX Designer roles • Product Designer roles • UX Research opportunities
-              <br />
+              <br className="hidden sm:block" />
               Freelance, internships, collaborations, and hands-on projects
             </p>
             <Link to="/contact">
