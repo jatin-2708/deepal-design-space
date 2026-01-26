@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 const projects = [
   {
@@ -100,15 +101,11 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="order-1 lg:order-2 flex justify-center lg:justify-end"
             >
-              <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl bg-gradient-to-br from-muted/50 to-muted border-2 border-dashed border-border flex items-center justify-center">
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted-foreground/10 flex items-center justify-center">
-                    <span className="text-2xl">👤</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Your illustration here</p>
-                  <p className="text-muted-foreground/60 text-xs mt-1">Recommended: 420×520px</p>
-                </div>
-              </div>
+              <img 
+                src={heroIllustration} 
+                alt="Deepal Gupta - UI/UX Designer" 
+                className="w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl object-cover shadow-card"
+              />
             </motion.div>
           </div>
         </div>
