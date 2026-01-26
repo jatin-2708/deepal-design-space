@@ -10,48 +10,38 @@ const wallItems = [
     icon: Trophy,
     color: "bg-gradient-peach",
     rotation: -3,
+    image: "/images/wall/sandbox.svg",
   },
   {
     title: "Game Design",
-    description: "Ragpickers — Game Design Award",
+    description: "1st Runner-Up — Ragpickers",
     icon: Gamepad2,
-    color: "bg-gradient-lavender",
+    color: "bg-gradient-cyan",
     rotation: 4,
+    image: "/images/wall/gamedesign.svg",
   },
   {
     title: "Flora Fusion",
-    description: "Packaging Design Project",
+    description: "Speculative Packaging Design",
     icon: Flower2,
     color: "bg-gradient-mint",
     rotation: -2,
+    image: "/images/wall/florafusion.svg",
   },
   {
     title: "Infographics",
     description: "Data Visualization & Visual Storytelling",
     icon: BarChart3,
-    color: "bg-white shadow-card",
+    color: "bg-gradient-lavender",
     rotation: 5,
-  },
-  {
-    title: "Calligraphy",
-    description: "Foundation Certification",
-    icon: PenTool,
-    color: "bg-gradient-cyan",
-    rotation: -4,
-  },
-  {
-    title: "Excellence Awards",
-    description: "Recognition for Outstanding Work",
-    icon: Star,
-    color: "bg-gradient-peach",
-    rotation: 3,
+    image: "/images/wall/datavis.svg",
   },
 ];
 
 export default function Wall() {
   return (
     <Layout>
-      <section className="pt-28 md:pt-32 pb-10 bg-gradient-hero">
+      <section className="pt-28 md:pt-32 pb-10">
         <div className="container max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -82,7 +72,7 @@ export default function Wall() {
       {/* Wall Grid */}
       <section className="py-12 md:py-16 min-h-[60vh]">
         <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
             {wallItems.map((item, index) => (
               <WallItem
                 key={item.title}
@@ -98,11 +88,15 @@ export default function Wall() {
                   <p className="text-xs md:text-sm text-muted-foreground mb-4">{item.description}</p>
                   
                   {/* Image Placeholder */}
-                  <div className="mt-auto w-full aspect-square rounded-xl bg-white/50 border-2 border-dashed border-border/50 flex items-center justify-center">
-                    <div className="text-center p-3">
-                      <ImageIcon className="h-6 w-6 mx-auto mb-1 text-muted-foreground/30" />
-                      <p className="text-muted-foreground/50 text-xs">Add image</p>
-                    </div>
+                  <div className="mt-auto w-full aspect-square rounded-xl bg-white/50 border-2 border-dashed border-border/50 flex items-center justify-center overflow-hidden">
+                    {item.image ? (
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="text-center p-3">
+                        <ImageIcon className="h-6 w-6 mx-auto mb-1 text-muted-foreground/30" />
+                        <p className="text-muted-foreground/50 text-xs">Add image</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </WallItem>

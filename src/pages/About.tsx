@@ -27,18 +27,20 @@ const skills = [
   "Usability Testing",
   "Data Analysis & Visualization",
   "Surveys & Insight Synthesis",
+  "Responsive Web Design",
+  "Prompt Engineering"
 ];
 
 const tools = [
-  { name: "Figma", category: "UI/UX Design", icon: Figma },
-  { name: "Framer", category: "UI/UX Design", icon: Layers },
-  { name: "Miro", category: "Research & Ideation", icon: Lightbulb },
-  { name: "Notion", category: "Research & Ideation", icon: FileSpreadsheet },
-  { name: "Adobe Photoshop", category: "Visual Design", icon: Palette },
-  { name: "Illustrator", category: "Visual Design", icon: PenTool },
-  { name: "After Effects", category: "Motion & 3D", icon: FileVideo },
-  { name: "Blender", category: "Motion & 3D", icon: Box },
-  { name: "HTML/CSS", category: "Front-End", icon: Code },
+  { name: "Figma", category: "UI/UX Design", image: "/images/tools/figma.svg" },
+  { name: "Orange", category: "Data Visualisation", image: "/images/tools/orange.svg" },
+  { name: "Miro", category: "Research & Ideation", image: "/images/tools/miro.svg" },
+  { name: "Notion", category: "Research & Ideation", image: "/images/tools/notion.svg" },
+  { name: "Adobe Photoshop", category: "Visual Design", image: "/images/tools/photoshop.svg" },
+  { name: "Illustrator", category: "Visual Design", image: "/images/tools/illustrator.svg" },
+  { name: "After Effects", category: "Motion & 3D", image: "/images/tools/aftereffects.svg" },
+  { name: "Blender", category: "Motion & 3D", image: "/images/tools/blender.svg" },
+  { name: "Canva", category: "Presentation", image: "/images/tools/canva.svg" },
 ];
 
 const certifications = [
@@ -54,7 +56,7 @@ const certifications = [
 export default function About() {
   return (
     <Layout>
-      <section className="pt-28 md:pt-32 pb-16 md:pb-20 bg-gradient-hero">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-20">
         <div className="container max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -79,22 +81,10 @@ export default function About() {
             className="prose prose-lg max-w-none"
           >
             <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-6">
-              Hi, I'm Deepal, a UI/UX designer with three years of experience working across 
-              domains such as finance, wellness, logistics, B2B, and SaaS. These experiences 
-              have helped me understand how user needs shift across contexts and how thoughtful 
-              design adapts to those changes.
+              Hi, I'm Deepal, a UI/UX designer, I have experience of working on projects across domains such as finance, wellness, logistics, B2B, and SaaS. These experiences have helped me understand how user needs shift across contexts and how thoughtful design adapts to those changes.
             </p>
             <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-6">
-              My work is strongly grounded in user research, interaction design, information 
-              architecture, service design, and usability testing. I enjoy exploring market 
-              and product trends, analyzing data through surveys and research, and translating 
-              insights into clear, meaningful user experiences.
-            </p>
-            <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-              Alongside building my technical skills, I've been intentionally working on my 
-              communication—speaking up more, sharing my thinking out loud, and engaging 
-              actively with people. I see collaboration and everyday conversations as an 
-              essential part of my growth as a designer.
+              My work is strongly grounded in user research, interaction design, information architecture, service design, and usability testing. I enjoy exploring market and product trends, analyzing data through surveys and research, and translating insights into clear, meaningful user experiences.
             </p>
           </motion.div>
         </div>
@@ -134,9 +124,14 @@ export default function About() {
                 transition={{ delay: index * 0.05 }}
                 className="p-4 rounded-xl bg-white shadow-soft hover:shadow-card transition-all flex items-center gap-3"
               >
-                <div className="w-10 h-10 rounded-lg bg-navy-light flex items-center justify-center flex-shrink-0">
-                  <tool.icon className="h-5 w-5 text-primary" />
-                </div>
+                <div className="w-14 h-14 rounded-lg bg-navy-light flex items-center justify-center flex-shrink-0">
+  <img
+    src={tool.image}
+    alt={tool.name}
+    className="w-full h-full p-2 object-contain"
+  />
+</div>
+
                 <div className="min-w-0">
                   <p className="font-medium text-foreground text-sm md:text-base truncate">{tool.name}</p>
                   <p className="text-xs text-muted-foreground truncate">{tool.category}</p>

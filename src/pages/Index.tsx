@@ -13,24 +13,28 @@ const projects = [
     description: "Improved a campus printing workflow. Balanced student and vendor requirements. Enhanced usability, clarity, and operational efficiency.",
     tags: ["Interaction Design", "In-campus Printing process"],
     gradient: "cyan" as const,
+    imageUrl: "/images/projects/printfast.svg",
   },
   {
     title: "COOUP",
     description: "Conceptualized a multi-stakeholder wellness ecosystem. Developed service blueprints and experience flows beyond screens.",
     tags: ["Service Design", "Wellness and Community"],
-    gradient: "mint" as const,
+    gradient: "peach" as const,
+    imageUrl: "/images/projects/cooup.svg",
   },
   {
     title: "DYME",
     description: "Worked in rapid sprint cycles under tight deadlines. Balanced feasibility, prioritization, and user needs. Delivered a structured end-to-end user experience.",
     tags: ["design Project", "Focus and Productivity"],
-    gradient: "peach" as const,
+    gradient: "lavender" as const,
+    imageUrl: "/images/projects/dyme.svg",
   },
   {
     title: "SAKHA",
     description: "Created a multi-touchpoint banking system integrating physical and digital channels. Addressed diverse user groups, accessibility needs, and operational constraints.",
     tags: ["Omnichannel", "Cash Transaction"],
-    gradient: "coral" as const,
+    gradient: "mint" as const,
+    imageUrl: "/images/projects/sakha.svg",
   },
 ];
 

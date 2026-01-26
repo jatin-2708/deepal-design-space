@@ -43,7 +43,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="pt-28 md:pt-32 pb-16 md:pb-20 bg-gradient-hero min-h-screen">
+      <section className="pt-28 md:pt-32 pb-16 md:pb-20 min-h-screen">
         <div className="container max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

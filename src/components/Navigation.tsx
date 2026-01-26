@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Placeholder path for the resume PDF. Place your resume file at this path (public/resume.pdf)
+const RESUME_PATH = "/resume.pdf";
+
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Work", path: "/projects" },
@@ -43,7 +46,7 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6 md:pt-6"
     >
       <nav
-        className={`mx-auto max-w-4xl flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl transition-all duration-300 ${
+        className={`mx-auto max-w-4xl flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl border border-primary/20 transition-all duration-300 ${
           isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-nav"
             : "bg-white/80 backdrop-blur-sm shadow-soft"
@@ -72,10 +75,12 @@ export function Navigation() {
             </li>
           ))}
           <li className="ml-2">
-            <Button variant="outline" size="sm" className="rounded-xl gap-2 border-primary/20 hover:bg-navy-light">
-              <FileText className="h-4 w-4" />
-              <span className="hidden lg:inline">Resume</span>
-            </Button>
+            <a href={RESUME_PATH} download aria-label="Download resume">
+              <Button variant="outline" size="sm" className="rounded-xl gap-2 border-primary/20 hover:bg-navy-light">
+                <FileText className="h-4 w-4" />
+                <span className="hidden lg:inline">Resume</span>
+              </Button>
+            </a>
           </li>
         </ul>
 
@@ -118,10 +123,12 @@ export function Navigation() {
                 </li>
               ))}
               <li className="mt-2 pt-2 border-t border-border">
-                <Button variant="outline" size="sm" className="w-full rounded-xl gap-2 border-primary/20">
-                  <FileText className="h-4 w-4" />
-                  Resume
-                </Button>
+                <a href={RESUME_PATH} download aria-label="Download resume" className="block">
+                  <Button variant="outline" size="sm" className="w-full rounded-xl gap-2 border-primary/20">
+                    <FileText className="h-4 w-4" />
+                    Resume
+                  </Button>
+                </a>
               </li>
             </ul>
           </motion.div>
