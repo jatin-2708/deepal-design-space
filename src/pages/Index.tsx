@@ -55,7 +55,7 @@ export default function Index() {
               className="order-2 lg:order-1"
             >
               <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-6">
-                HI, I am
+                Hi, I am
                 <br />
                 <span className="text-foreground">Deepal Gupta</span>
               </h1>
