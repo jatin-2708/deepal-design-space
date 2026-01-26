@@ -186,7 +186,7 @@ export default function About() {
       </section>
 
       {/* Open To Section */}
-      <section className="py-12 md:py-16 bg-gradient-peach">
+      <section className="py-12 md:py-16 bg-cream">
         <div className="container max-w-4xl mx-auto px-6">
           <SectionHeading icon={<Briefcase className="h-6 w-6 md:h-8 md:w-8" />} className="mb-6 md:mb-8">
             Currently Open To
@@ -207,7 +207,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <SkillTag variant="highlight">{item}</SkillTag>
+                <SkillTag>{item}</SkillTag>
               </motion.div>
             ))}
           </div>

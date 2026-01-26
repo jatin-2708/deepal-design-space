@@ -14,6 +14,7 @@ const projects = [
     tags: ["Interaction Design", "In-campus Printing process"],
     gradient: "cyan" as const,
     imageUrl: "/images/projects/printfast.svg",
+    slug: "https://drive.google.com/file/d/1WriCy9rQsnzT66NbNkATrZ6a6kKtAQO5/view?usp=sharing",
   },
   {
     title: "COOUP",
@@ -21,6 +22,7 @@ const projects = [
     tags: ["Service Design", "Wellness and Community"],
     gradient: "peach" as const,
     imageUrl: "/images/projects/cooup.svg",
+    slug: "https://drive.google.com/file/d/16oX0ezLTgCoCLtnoCoXMvUZOJ4aFctzM/view?usp=sharing",
   },
   {
     title: "DYME",
@@ -28,6 +30,7 @@ const projects = [
     tags: ["design Project", "Focus and Productivity"],
     gradient: "lavender" as const,
     imageUrl: "/images/projects/dyme.svg",
+    slug: "https://drive.google.com/file/d/17CZ4L0qTASLpWalyEg6Z-ZPYHDkLlC3c/view?usp=sharing",
   },
   {
     title: "SAKHA",
@@ -35,6 +38,7 @@ const projects = [
     tags: ["Omnichannel", "Cash Transaction"],
     gradient: "mint" as const,
     imageUrl: "/images/projects/sakha.svg",
+    slug: "https://drive.google.com/file/d/17sockccBBNFOkkff897N6cgS0HJPBmMz/view?usp=sharing",
   },
 ];
 
@@ -59,10 +63,12 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="order-2 lg:order-1"
             >
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-6">
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground mb-2">
                 Hi, I am
-                <br />
-                <span className="text-foreground">Deepal Gupta</span>
+              </h3>
+              <br />
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-6">
+                Deepal Gupta
               </h1>
 
               <motion.div
@@ -80,7 +86,7 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-lg md:text-xl text-muted-foreground max-w-lg"
               >
-                I think deeply, work intentionally, and translate complexity into meaningful user experiences.
+                A multidisciplinary designer crafting meaningful digital experiences through research, strategy, and visual clarity.
               </motion.p>
 
               <motion.div
@@ -103,13 +109,22 @@ export default function Index() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="order-1 lg:order-2 flex justify-center lg:justify-end"
+              className="order-1 lg:order-2 flex justify-center lg:justify-end group cursor-pointer"
             >
-              <img 
-                src={heroIllustration} 
-                alt="Deepal Gupta - UI/UX Designer" 
-                className="w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl object-cover shadow-card"
-              />
+              <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-foreground">
+                {/* Default Image */}
+                <img 
+                  src="/images/hero/default.jpeg" 
+                  alt="Deepal Gupta - UI/UX Designer" 
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0 z-10 rounded-3xl"
+                />
+                {/* Hover Image */}
+                <img 
+                  src="/images/hero/hover.jpeg" 
+                  alt="Deepal Gupta - UI/UX Designer Hover" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20 rounded-3xl"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -118,7 +133,7 @@ export default function Index() {
       {/* Design Values Section */}
       <section className="py-20 bg-cream">
         <div className="container max-w-5xl mx-auto px-6">
-          <SectionHeading className="mb-12">What This Portfolio Represents</SectionHeading>
+          <SectionHeading className="mb-12">What You’ll Find Here.</SectionHeading>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}

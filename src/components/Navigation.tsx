@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Placeholder path for the resume PDF. Place your resume file at this path (public/resume.pdf)
-const RESUME_PATH = "/resume.pdf";
+// Example Google Drive link for the resume. Replace with your actual Google Drive resume link.
+const RESUME_LINK = "https://drive.google.com/file/d/19Jiq8guF84KuFKCMQiUD50DAzMpVXEbc/view?usp=sharing";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -75,7 +75,7 @@ export function Navigation() {
             </li>
           ))}
           <li className="ml-2">
-            <a href={RESUME_PATH} download aria-label="Download resume">
+            <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume">
               <Button variant="outline" size="sm" className="rounded-xl gap-2 border-primary/20 hover:bg-navy-light">
                 <FileText className="h-4 w-4" />
                 <span className="hidden lg:inline">Resume</span>
@@ -123,7 +123,7 @@ export function Navigation() {
                 </li>
               ))}
               <li className="mt-2 pt-2 border-t border-border">
-                <a href={RESUME_PATH} download aria-label="Download resume" className="block">
+                <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume" className="block">
                   <Button variant="outline" size="sm" className="w-full rounded-xl gap-2 border-primary/20">
                     <FileText className="h-4 w-4" />
                     Resume

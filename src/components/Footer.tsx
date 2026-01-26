@@ -1,6 +1,25 @@
-import { Mail, Linkedin, ExternalLink } from "lucide-react";
-
+// Footer component
 export function Footer() {
+  const socialLinks = [
+    {
+      href: "mailto:gdeepal190404@gmail.com",
+      image: "/icons/gmail.svg",
+      alt: "Email",
+    },
+    {
+      href: "https://linkedin.com/in/deepalgupta19",
+      image: "/icons/linkedin.png",
+      alt: "LinkedIn",
+      target: "_blank",
+    },
+    {
+      href: "https://behance.net/deepalgupta",
+      image: "/icons/behance.png",
+      alt: "Behance",
+      target: "_blank",
+    },
+  ];
+
   return (
     <footer className="py-12 mt-20 border-t border-border bg-cream">
       <div className="container max-w-5xl mx-auto px-6">
@@ -13,28 +32,17 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-4">
-            <a
-              href="mailto:hello@deepalgupta.com"
-              className="p-3 rounded-xl bg-white shadow-soft hover:shadow-card transition-all duration-200 text-muted-foreground hover:text-primary"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-white shadow-soft hover:shadow-card transition-all duration-200 text-muted-foreground hover:text-primary"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a
-              href="https://behance.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-white shadow-soft hover:shadow-card transition-all duration-200 text-muted-foreground hover:text-primary"
-            >
-              <ExternalLink className="h-5 w-5" />
-            </a>
+            {socialLinks.map((link) => (
+              <a
+                key={link.alt}
+                href={link.href}
+                target={link.target}
+                rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
+                className="p-3 rounded-xl bg-white shadow-soft hover:shadow-card transition-all duration-200"
+              >
+                <img src={link.image} alt={link.alt} className="h-5 w-5" />
+              </a>
+            ))}
           </div>
         </div>
         

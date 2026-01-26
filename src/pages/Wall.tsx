@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { WallItem } from "@/components/WallItem";
 import { Trophy, Gamepad2, Flower2, BarChart3, PenTool, Star, Music, ImageIcon } from "lucide-react";
@@ -11,6 +13,7 @@ const wallItems = [
     color: "bg-gradient-peach",
     rotation: -3,
     image: "/images/wall/sandbox.svg",
+    slug: "https://drive.google.com/file/d/14tcgG8tyxvj2Ig7b7AcQ-eQpUVl4rI5n/view?usp=sharing",
   },
   {
     title: "Game Design",
@@ -19,6 +22,7 @@ const wallItems = [
     color: "bg-gradient-cyan",
     rotation: 4,
     image: "/images/wall/gamedesign.svg",
+    slug: "https://drive.google.com/file/d/1Ne8NutHiFgMD5PuPbpELvAMBKw5EPPFs/view?usp=sharing",
   },
   {
     title: "Flora Fusion",
@@ -27,6 +31,7 @@ const wallItems = [
     color: "bg-gradient-mint",
     rotation: -2,
     image: "/images/wall/florafusion.svg",
+    slug: "https://drive.google.com/file/d/1bsLM722bkmXubfYt1pmdABXnEfDygvTj/view?usp=sharing",
   },
   {
     title: "Infographics",
@@ -35,6 +40,7 @@ const wallItems = [
     color: "bg-gradient-lavender",
     rotation: 5,
     image: "/images/wall/datavis.svg",
+    slug: "https://drive.google.com/file/d/1B_A7d7xOQ-OTZzYyz4fpTZznhKaRq4TF/view?usp=sharing",
   },
 ];
 
@@ -88,7 +94,7 @@ export default function Wall() {
                   <p className="text-xs md:text-sm text-muted-foreground mb-4">{item.description}</p>
                   
                   {/* Image Placeholder */}
-                  <div className="mt-auto w-full aspect-square rounded-xl bg-white/50 border-2 border-dashed border-border/50 flex items-center justify-center overflow-hidden">
+                  <div className="mt-auto w-full aspect-square rounded-xl bg-white/50 border-2 border-dashed border-border/50 flex items-center justify-center overflow-hidden mb-4">
                     {item.image ? (
                       <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                     ) : (
@@ -98,6 +104,15 @@ export default function Wall() {
                       </div>
                     )}
                   </div>
+
+                  {/* View Project Link */}
+                  <Link
+                    to={item.slug}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all"
+                  >
+                    View Project
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </WallItem>
             ))}

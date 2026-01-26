@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, ExternalLink, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,21 +10,24 @@ import { toast } from "sonner";
 const contactLinks = [
   {
     title: "Email",
-    value: "hello@deepalgupta.com",
-    href: "mailto:hello@deepalgupta.com",
-    icon: Mail,
+    value: "gdeepal190404@gmail.com",
+    href: "mailto:gdeepal190404@gmail.com",
+    icon: null,
+    image: "/icons/gmail.svg",
   },
   {
     title: "LinkedIn",
-    value: "linkedin.com/in/deepalgupta",
-    href: "https://linkedin.com",
-    icon: Linkedin,
+    value: "linkedin.com/in/deepalgupta19",
+    href: "https://linkedin.com/in/deepalgupta19",
+    icon: null,
+    image: "/icons/linkedin.png",
   },
   {
     title: "Behance",
     value: "behance.net/deepalgupta",
-    href: "https://behance.net",
-    icon: ExternalLink,
+    href: "https://behance.net/deepalgupta",
+    icon: null,
+    image: "/icons/behance.png",
   },
 ];
 
@@ -79,7 +82,11 @@ export default function Contact() {
                     className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-white shadow-soft hover:shadow-card transition-all group"
                   >
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-navy-light flex items-center justify-center group-hover:bg-primary transition-colors">
-                      <link.icon className="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                      {link.image ? (
+                        <img src={link.image} alt={link.title} className="h-4 w-4 md:h-5 md:w-5" />
+                      ) : (
+                        <link.icon className="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                      )}
                     </div>
                     <div className="min-w-0">
                       <p className="font-medium text-foreground text-sm md:text-base">{link.title}</p>

@@ -11,6 +11,7 @@ const projects = [
     tags: ["Interaction Design", "In-campus Printing process"],
     gradient: "cyan" as const,
     imageUrl: "/images/projects/printfast.svg",
+    slug: "https://drive.google.com/file/d/1WriCy9rQsnzT66NbNkATrZ6a6kKtAQO5/view?usp=sharing",
   },
   {
     title: "COOUP",
@@ -18,6 +19,7 @@ const projects = [
     tags: ["Service Design", "Wellness and Community"],
     gradient: "peach" as const,
     imageUrl: "/images/projects/cooup.svg",
+    slug: "https://drive.google.com/file/d/16oX0ezLTgCoCLtnoCoXMvUZOJ4aFctzM/view?usp=sharing",
   },
   {
     title: "DYME",
@@ -25,6 +27,7 @@ const projects = [
     tags: ["design Project", "Focus and Productivity"],
     gradient: "lavender" as const,
     imageUrl: "/images/projects/dyme.svg",
+    slug: "https://drive.google.com/file/d/17CZ4L0qTASLpWalyEg6Z-ZPYHDkLlC3c/view?usp=sharing",
   },
   {
     title: "SAKHA",
@@ -32,6 +35,7 @@ const projects = [
     tags: ["Omnichannel", "Cash Transaction"],
     gradient: "mint" as const,
     imageUrl: "/images/projects/sakha.svg",
+    slug: "https://drive.google.com/file/d/17sockccBBNFOkkff897N6cgS0HJPBmMz/view?usp=sharing",
   },
 ];
 
