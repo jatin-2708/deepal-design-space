@@ -75,11 +75,7 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-lg md:text-xl text-muted-foreground max-w-lg"
               >
-                This portfolio reflects how <span className="text-highlight-red font-medium">I think</span>, how <span className="text-highlight-blue font-medium">I work</span>,
-                <br className="hidden sm:block" />
-                and how <span className="text-highlight-red font-medium">I translate</span> complexity into meaningful
-                <br className="hidden sm:block" />
-                user experiences.
+                I think deeply, work intentionally, and translate complexity into meaningful user experiences.
               </motion.p>
 
               <motion.div
