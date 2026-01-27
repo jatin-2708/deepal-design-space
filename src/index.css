@@ -6,67 +6,67 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 217 33% 27%;
+    --background: 48 20% 97%;
+    --foreground: 240 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 217 33% 27%;
+    --card-foreground: 240 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 217 33% 27%;
+    --popover-foreground: 240 20% 20%;
 
-    --primary: 217 33% 27%;
+    --primary: 240 20% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 217 33% 27%;
+    --secondary: 35 50% 92%;
+    --secondary-foreground: 240 20% 20%;
 
-    --muted: 210 15% 94%;
-    --muted-foreground: 217 20% 50%;
+    --muted: 35 30% 90%;
+    --muted-foreground: 240 20% 40%;
 
-    --accent: 345 60% 70%;
+    --accent: 12 45% 68%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 15% 88%;
-    --input: 210 15% 88%;
-    --ring: 217 33% 27%;
+    --border: 35 30% 92%;
+    --input: 35 30% 92%;
+    --ring: 240 20% 20%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens - Navy blue theme */
-    --navy: 217 33% 27%;
-    --navy-light: 217 30% 95%;
-    --coral: 12 76% 61%;
-    --coral-light: 12 85% 95%;
-    --peach: 25 90% 95%;
-    --mint: 175 40% 92%;
-    --lavender: 280 40% 95%;
-    --cream: 45 30% 97%;
-    --charcoal: 217 33% 27%;
-    --grid-line: 210 10% 92%;
-    --highlight-red: 0 72% 51%;
-    --highlight-blue: 210 100% 50%;
+    /* Custom tokens - Refined minimal palette */
+    --ink-blue: 240 20% 20%;
+    --ink-blue-light: 240 20% 95%;
+    --soft-peach: 12 45% 68%;
+    --soft-peach-light: 12 50% 92%;
+    --soft-lavender: 260 35% 75%;
+    --soft-lavender-light: 260 40% 92%;
+    --soft-sage: 150 25% 70%;
+    --soft-sage-light: 150 30% 90%;
+    --off-white: 48 20% 97%;
+    --charcoal: 240 20% 20%;
+    --grid-line: 35 30% 92%;
+    --highlight-accent: 12 45% 68%;
 
-    /* Gradients - using soft pastel tones */
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
-    --gradient-nav: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 15% 98%) 100%);
-    --gradient-card-cyan: linear-gradient(135deg, hsl(185 40% 94%) 0%, hsl(190 35% 96%) 100%);
-    --gradient-card-mint: linear-gradient(135deg, hsl(160 35% 94%) 0%, hsl(170 30% 96%) 100%);
-    --gradient-card-peach: linear-gradient(135deg, hsl(35 70% 95%) 0%, hsl(40 60% 97%) 100%);
-    --gradient-card-lavender: linear-gradient(135deg, hsl(280 40% 96%) 0%, hsl(290 35% 97%) 100%);
+    /* Gradients - off-white base with subtle accents */
+    --gradient-hero: linear-gradient(180deg, hsl(48 20% 97%) 0%, hsl(35 30% 95%) 100%);
+    --gradient-nav: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(48 20% 97%) 100%);
+    --gradient-card-cyan: linear-gradient(135deg, hsl(150 25% 85%) 0%, hsl(48 20% 97%) 100%);
+    --gradient-card-mint: linear-gradient(135deg, hsl(150 25% 85%) 0%, hsl(35 50% 90%) 100%);
+    --gradient-card-peach: linear-gradient(135deg, hsl(12 45% 85%) 0%, hsl(48 20% 97%) 100%);
+    --gradient-card-lavender: linear-gradient(135deg, hsl(260 35% 85%) 0%, hsl(48 20% 97%) 100%);
 
     /* Typography */
     --font-display: 'Libre Baskerville', Georgia, serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(217 33% 27% / 0.08);
-    --shadow-card: 0 8px 32px -8px hsl(217 33% 27% / 0.1);
-    --shadow-elevated: 0 16px 48px -12px hsl(217 33% 27% / 0.15);
-    --shadow-nav: 0 4px 24px -4px hsl(217 33% 27% / 0.06);
+    --shadow-soft: 0 4px 20px -4px hsl(240 20% 20% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(240 20% 20% / 0.1);
+    --shadow-elevated: 0 16px 48px -12px hsl(240 20% 20% / 0.15);
+    --shadow-nav: 0 4px 24px -4px hsl(240 20% 20% / 0.06);
   }
 
   .dark {

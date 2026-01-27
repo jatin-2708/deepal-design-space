@@ -55,10 +55,10 @@ export default function Index() {
   return (
     <Layout>
       {/* ===== HERO SECTION: Introduction ===== */}
-      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-gradient-subtle relative overflow-hidden">
+      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-white relative overflow-hidden">
         {/* Subtle background element */}
         <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-navy/5 blur-3xl pointer-events-none"
+          className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"
           animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -77,7 +77,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy/60 mb-2">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary/60 mb-2">
                   Hey there, I'm
                 </h3>
               </motion.div>
@@ -87,11 +87,11 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-navy relative inline-block">
+                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-primary relative inline-block">
                   Deepal Gupta
                   {/* Decorative underline */}
                   <motion.div
-                    className="absolute -bottom-2 left-0 text-navy/40"
+                    className="absolute -bottom-2 left-0 text-primary/30"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
@@ -106,9 +106,9 @@ export default function Index() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="inline-block px-5 py-2.5 rounded-full bg-navy/10 border border-navy/20 text-navy-foreground mb-8 mt-8"
+                className="inline-block px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8 mt-8"
               >
-                <span className="text-sm font-medium text-navy">UI/UX Designer • Design Thinker</span>
+                <span className="text-sm font-medium text-primary">UI/UX Designer • Design Thinker</span>
               </motion.div>
 
               <motion.p
@@ -118,8 +118,8 @@ export default function Index() {
                 className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
               >
                 I craft meaningful digital experiences through research-driven thinking, 
-                <span className="text-navy font-medium"> thoughtful design</span>, and 
-                <span className="text-navy font-medium"> systems thinking</span>. Every interaction tells a story.
+                <span className="text-primary font-medium"> thoughtful design</span>, and 
+                <span className="text-primary font-medium"> systems thinking</span>. Every interaction tells a story.
               </motion.p>
 
               <motion.div
@@ -135,7 +135,7 @@ export default function Index() {
                   >
                     <Button 
                       size="lg" 
-                      className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-navy hover:bg-navy/90 text-white"
+                      className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-primary hover:bg-primary/90 text-white"
                     >
                       View My Work
                       <motion.span
@@ -155,7 +155,7 @@ export default function Index() {
                     <Button 
                       size="lg" 
                       variant="outline"
-                      className="rounded-xl border-navy/30 text-navy hover:bg-navy/5"
+                      className="rounded-xl border-primary/30 text-primary hover:bg-primary/5"
                     >
                       Let's Talk
                     </Button>
@@ -172,7 +172,7 @@ export default function Index() {
               className="order-1 lg:order-2 flex justify-center lg:justify-end group cursor-pointer relative"
             >
               <motion.div
-                className="absolute -inset-4 bg-gradient-to-br from-navy/10 via-transparent to-transparent rounded-3xl blur-2xl"
+                className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-transparent rounded-3xl blur-2xl"
                 animate={{ 
                   opacity: [0.5, 0.8, 0.5],
                   scale: [0.95, 1.05, 0.95]
@@ -180,7 +180,7 @@ export default function Index() {
                 transition={{ duration: 6, repeat: Infinity }}
               />
               <motion.div
-                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-navy/30 shadow-soft"
+                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-primary/30 shadow-soft"
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.4 }}
               >
@@ -199,7 +199,7 @@ export default function Index() {
 
                 {/* Decorative circle */}
                 <motion.div
-                  className="absolute -top-8 -left-8 text-navy/20"
+                  className="absolute -top-8 -left-8 text-primary/20"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
@@ -211,12 +211,12 @@ export default function Index() {
         </div>
       </section>
 
-      <SectionDivider accentColor="navy" />
+      <SectionDivider accentColor="primary" />
 
       {/* ===== MINDSET SECTION: How I Think ===== */}
       <section className="py-20 md:py-28 bg-white relative overflow-hidden">
         <div className="container max-w-5xl mx-auto px-6">
-          <SectionHeading className="mb-4" withDoodle doodleColor="text-coral">
+          <SectionHeading className="mb-4" withDoodle doodleColor="text-primary">
             How I Think
           </SectionHeading>
 
@@ -228,9 +228,9 @@ export default function Index() {
             className="text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed"
           >
             Design is not just about aesthetics—it's about{" "}
-            <span className="text-navy font-medium">understanding behavior</span>, 
-            <span className="text-navy font-medium"> questioning assumptions</span>, and 
-            <span className="text-navy font-medium"> solving real problems</span>. 
+            <span className="text-primary font-medium">understanding behavior</span>, 
+            <span className="text-primary font-medium"> questioning assumptions</span>, and 
+            <span className="text-primary font-medium"> solving real problems</span>. 
             Every pixel, every interaction, every system should have a purpose.
           </motion.p>
 
@@ -243,17 +243,17 @@ export default function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="relative p-5 md:p-6 rounded-2xl bg-gradient-subtle border border-navy/10 hover:border-navy/30 hover:shadow-soft transition-all duration-300 group"
+                className="relative p-5 md:p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 hover:shadow-soft transition-all duration-300 group"
               >
-                {/* Small decorative accent */}
+                {/* Small decorative accent - icon color only */}
                 <motion.div
-                  className="absolute top-4 right-4 text-navy/20 group-hover:text-coral/40 transition-colors"
+                  className="absolute top-4 right-4 text-primary/20 group-hover:text-secondary/60 transition-colors"
                   whileHover={{ rotate: 90 }}
                 >
                   <DoodleCircle className="w-8 h-8" />
                 </motion.div>
 
-                <h3 className="font-display text-lg md:text-xl mb-2 text-navy">
+                <h3 className="font-display text-lg md:text-xl mb-2 text-primary">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -265,18 +265,18 @@ export default function Index() {
         </div>
       </section>
 
-      <SectionDivider accentColor="coral" />
+      <SectionDivider accentColor="primary" />
 
       {/* ===== WORK SECTION: Selected Projects ===== */}
-      <section className="py-20 md:py-28 bg-gradient-subtle">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
-            <SectionHeading withDoodle doodleColor="text-navy">
+            <SectionHeading withDoodle doodleColor="text-primary">
               Selected Work
             </SectionHeading>
             <Link
               to="/projects"
-              className="text-sm font-medium text-navy hover:text-navy/70 transition-colors flex items-center gap-1 group"
+              className="text-sm font-medium text-primary hover:text-primary/70 transition-colors flex items-center gap-1 group"
             >
               View all projects
               <motion.span
@@ -312,12 +312,12 @@ export default function Index() {
         </div>
       </section>
 
-      <SectionDivider accentColor="lavender" />
+      <SectionDivider accentColor="primary" />
 
       {/* ===== REFLECTION SECTION: CTA & Closing ===== */}
       <section className="py-20 md:py-28 bg-white relative overflow-hidden">
         <motion.div
-          className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-lavender/20 blur-3xl -z-10"
+          className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-secondary/20 blur-3xl -z-10"
           animate={{ y: [0, 40, 0], x: [0, -30, 0] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
@@ -329,13 +329,13 @@ export default function Index() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <SectionHeading className="mb-6 justify-center" withDoodle doodleColor="text-mint">
+            <SectionHeading className="mb-6 justify-center" withDoodle doodleColor="text-primary">
               Let's Create Something Meaningful
             </SectionHeading>
 
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
               Whether you have a project in mind, want to collaborate, or just want to chat about design and research—
-              <span className="text-navy font-medium"> I'd love to hear from you.</span>
+              <span className="text-primary font-medium"> I'd love to hear from you.</span>
             </p>
 
             <motion.div
@@ -352,7 +352,7 @@ export default function Index() {
                 >
                   <Button 
                     size="lg" 
-                    className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-gradient-to-r from-navy to-navy/80 text-white"
+                    className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-primary hover:bg-primary/90 text-white"
                   >
                     Get in Touch
                     <motion.span
@@ -372,7 +372,7 @@ export default function Index() {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="rounded-xl border-navy/30 text-navy hover:bg-navy/5"
+                    className="rounded-xl border-primary/30 text-primary hover:bg-primary/5"
                   >
                     Download Resume
                   </Button>
