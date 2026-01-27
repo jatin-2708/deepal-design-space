@@ -90,57 +90,103 @@ export default function About() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-12 md:py-16 bg-cream">
-        <div className="container max-w-4xl mx-auto px-6">
-          <SectionHeading className="mb-6 md:mb-8">Core Skills</SectionHeading>
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <SkillTag>{skill}</SkillTag>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Core Skills – Contained Motion Marquee */}
+<section className="py-12 md:py-16 bg-cream">
+  <div className="container max-w-6xl mx-auto px-6">
+    <SectionHeading className="mb-8">Core Skills</SectionHeading>
 
-      {/* Tools Section */}
-      <section className="py-12 md:py-16">
-        <div className="container max-w-4xl mx-auto px-6">
-          <SectionHeading className="mb-6 md:mb-8">Tools</SectionHeading>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-            {tools.map((tool, index) => (
-              <motion.div
-                key={tool.name}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="p-4 rounded-xl bg-white shadow-soft hover:shadow-card transition-all flex items-center gap-3"
-              >
-                <div className="w-14 h-14 rounded-lg bg-navy-light flex items-center justify-center flex-shrink-0">
-  <img
-    src={tool.image}
-    alt={tool.name}
-    className="w-full h-full p-2 object-contain"
-  />
-</div>
+    {/* Mask */}
+    <div className="overflow-hidden">
+      <motion.div
+        className="flex gap-3 md:gap-4 w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 28,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        whileHover={{ animationPlayState: "paused" }}
+      >
+        {[...skills, ...skills].map((skill, index) => (
+          <motion.div
+            key={`${skill}-${index}`}
+            whileHover={{
+              scale: 1.08,
+              backgroundColor: "var(--accent)",
+              color: "var(--accent-foreground)",
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="px-4 py-2 rounded-full bg-white shadow-soft text-sm md:text-base whitespace-nowrap cursor-default"
+          >
+            {skill}
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
 
-                <div className="min-w-0">
-                  <p className="font-medium text-foreground text-sm md:text-base truncate">{tool.name}</p>
-                  <p className="text-xs text-muted-foreground truncate">{tool.category}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
+  </div>
+</section>
+
+
+
+      {/* Tools – Motion Marquee (Centered Icons, Bigger) */}
+<section className="py-12 md:py-16">
+  <div className="container max-w-6xl mx-auto px-6">
+    <SectionHeading className="mb-8">Tools I Use</SectionHeading>
+
+    {/* Mask */}
+    <div className="overflow-hidden">
+      <motion.div
+        className="flex gap-3 w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 28,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        whileHover={{ animationPlayState: "paused" }}
+      >
+        {[...tools, ...tools].map((tool, index) => (
+          <motion.div
+            key={`${tool.name}-${index}`}
+            whileHover={{
+              scale: 1.05,
+              backgroundColor: "var(--accent)",
+            }}
+            transition={{ type: "spring", stiffness: 280 }}
+            className="min-w-[170px] h-[120px] p-3 rounded-xl bg-white shadow-soft transition-colors cursor-pointer group flex flex-col items-center justify-center text-center"
+          >
+            {/* Icon – centered */}
+            <div className="w-12 h-12 mb-2 rounded-lg bg-navy-light flex items-center justify-center">
+              <img
+                src={tool.image}
+                alt={tool.name}
+                className="w-full h-full p-1 object-contain"
+              />
+            </div>
+
+            {/* Text */}
+            <p className="font-medium text-xs md:text-sm group-hover:text-accent-foreground transition-colors truncate">
+              {tool.name}
+            </p>
+
+            <p className="text-[11px] text-muted-foreground mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity truncate">
+              {tool.category}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+
+    
+  </div>
+</section>
+
+
+
+
+
 
       {/* Education Section */}
       <section className="py-12 md:py-16 bg-gradient-mint">
@@ -185,34 +231,61 @@ export default function About() {
         </div>
       </section>
 
-      {/* Open To Section */}
-      <section className="py-12 md:py-16 bg-cream">
-        <div className="container max-w-4xl mx-auto px-6">
-          <SectionHeading icon={<Briefcase className="h-6 w-6 md:h-8 md:w-8" />} className="mb-6 md:mb-8">
-            Currently Open To
-          </SectionHeading>
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {[
-              "UI/UX Designer roles",
-              "Product Designer roles",
-              "UX Research opportunities",
-              "Freelance projects",
-              "Internships",
-              "Collaborations",
-            ].map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <SkillTag>{item}</SkillTag>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Open To – Motion Marquee */}
+<section className="py-12 md:py-16 bg-cream">
+  <div className="container max-w-4xl mx-auto px-6">
+    <SectionHeading
+      icon={<Briefcase className="h-6 w-6 md:h-8 md:w-8" />}
+      className="mb-8"
+    >
+      Currently Open To
+    </SectionHeading>
+
+    {/* Mask */}
+    <div className="overflow-hidden">
+      <motion.div
+        className="flex gap-3 md:gap-4 w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 26,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        whileHover={{ animationPlayState: "paused" }}
+      >
+        {[
+          "UI/UX Designer roles",
+          "Product Designer roles",
+          "UX Research opportunities",
+          "Freelance projects",
+          "Internships",
+          "Collaborations",
+          // duplicate for seamless loop
+          "UI/UX Designer roles",
+          "Product Designer roles",
+          "UX Research opportunities",
+          "Freelance projects",
+          "Internships",
+          "Collaborations",
+        ].map((item, index) => (
+          <motion.div
+            key={`${item}-${index}`}
+            whileHover={{
+              scale: 1.08,
+              backgroundColor: "var(--accent)",
+              color: "var(--accent-foreground)",
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="px-4 py-2 rounded-full bg-white shadow-soft text-sm md:text-base whitespace-nowrap cursor-default"
+          >
+            {item}
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </div>
+</section>
+
     </Layout>
   );
 }

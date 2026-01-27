@@ -108,7 +108,7 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="inline-block px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8 mt-8"
               >
-                <span className="text-sm font-medium text-primary">UI/UX Designer • Design Thinker</span>
+                <span className="text-sm font-medium text-primary">UI/UX Designer </span>
               </motion.div>
 
               <motion.p
@@ -137,7 +137,7 @@ export default function Index() {
                       size="lg" 
                       className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-primary hover:bg-primary/90 text-white"
                     >
-                      View My Work
+                      Explore Case Studies
                       <motion.span
                         whileHover={{ x: 4 }}
                         transition={{ duration: 0.2 }}

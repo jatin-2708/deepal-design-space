@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Trophy,
+  Gamepad2,
+  Flower2,
+  BarChart3,
+  Music,
+  ImageIcon,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { WallItem } from "@/components/WallItem";
-import { Trophy, Gamepad2, Flower2, BarChart3, PenTool, Star, Music, ImageIcon } from "lucide-react";
 
 const wallItems = [
   {
@@ -47,28 +54,30 @@ const wallItems = [
 export default function Wall() {
   return (
     <Layout>
+      {/* Header */}
       <section className="pt-28 md:pt-32 pb-10">
-        <div className="container max-w-5xl mx-auto px-6">
+        <div className="container max-w-6xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
           >
             <motion.div
               initial={{ rotate: -5, scale: 0.9 }}
               animate={{ rotate: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="inline-block px-5 py-2.5 md:px-6 md:py-3 mb-6 rounded-2xl bg-accent/20 text-foreground font-display text-xl md:text-2xl"
+              className="inline-block px-4 py-2 mb-6 rounded-xl bg-accent/20 font-display text-lg"
               style={{ transform: "rotate(-2deg)" }}
             >
               This is my wall ✨
             </motion.div>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl mb-4">
+
+            <h1 className="font-display text-3xl md:text-4xl mb-3">
               Achievements, Interests & Extra Work
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              A collection of things I'm proud of, things I love, and creative explorations 
+
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A collection of things I’m proud of, things I love, and explorations
               beyond my main design work.
             </p>
           </motion.div>
@@ -76,42 +85,59 @@ export default function Wall() {
       </section>
 
       {/* Wall Grid */}
-      <section className="py-12 md:py-16 min-h-[60vh]">
-        <div className="container max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
+      <section className="py-12 md:py-14">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {wallItems.map((item, index) => (
               <WallItem
                 key={item.title}
                 rotation={item.rotation}
-                delay={index * 0.1}
+                delay={index * 0.08}
                 className="h-full"
               >
-                <div className={`p-5 md:p-6 lg:p-8 rounded-2xl ${item.color} h-full flex flex-col items-center text-center transition-all hover:shadow-elevated`}>
-                  <div className="w-14 h-14 md:w-16 md:h-16 mb-4 rounded-2xl bg-white/80 flex items-center justify-center shadow-soft">
-                    <item.icon className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                <div
+                  className={`p-3 md:p-4 rounded-xl ${item.color} h-full flex flex-col items-center text-center`}
+                >
+                  {/* Icon */}
+                  <div className="w-9 h-9 mb-2 rounded-lg bg-white/70 flex items-center justify-center">
+                    <item.icon className="h-4 w-4 text-primary" />
                   </div>
-                  <h3 className="font-display text-base md:text-lg lg:text-xl mb-2">{item.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground mb-4">{item.description}</p>
-                  
-                  {/* Image Placeholder */}
-                  <div className="mt-auto w-full aspect-square rounded-xl bg-white/50 border-2 border-dashed border-border/50 flex items-center justify-center overflow-hidden mb-4">
+
+                  {/* Title */}
+                  <h3 className="font-display text-sm mb-1">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-[11px] text-muted-foreground mb-2 leading-snug">
+                    {item.description}
+                  </p>
+
+                  {/* Image (UNCROPPED) */}
+                  <div className="mt-auto w-full aspect-square rounded-lg bg-white/60 border border-border/30 overflow-hidden mb-2">
                     {item.image ? (
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-contain"
+                      />
                     ) : (
-                      <div className="text-center p-3">
-                        <ImageIcon className="h-6 w-6 mx-auto mb-1 text-muted-foreground/30" />
-                        <p className="text-muted-foreground/50 text-xs">Add image</p>
+                      <div className="h-full flex flex-col items-center justify-center">
+                        <ImageIcon className="h-4 w-4 mb-1 text-muted-foreground/40" />
+                        <p className="text-xs text-muted-foreground/50">
+                          Add image
+                        </p>
                       </div>
                     )}
                   </div>
 
-                  {/* View Project Link */}
+                  {/* Link */}
                   <Link
                     to={item.slug}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all"
+                    className="inline-flex items-center gap-1 text-[11px] font-medium text-primary hover:gap-2 transition-all"
                   >
                     View Project
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-3 w-3" />
                   </Link>
                 </div>
               </WallItem>
@@ -121,54 +147,22 @@ export default function Wall() {
       </section>
 
       {/* Personal Note */}
-      <section className="py-12 md:py-16">
+      <section className="py-12">
         <div className="container max-w-4xl mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20, rotate: 1 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-6 md:p-8 rounded-2xl bg-peach relative"
+            className="p-6 md:p-7 rounded-2xl bg-peach relative"
           >
-            <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-accent/30 flex items-center justify-center">
+            <div className="absolute -top-3 -left-3 w-7 h-7 rounded-full bg-accent/30 flex items-center justify-center">
               <Music className="h-4 w-4 text-primary" />
             </div>
-            <p className="font-display text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed italic">
-              "My portfolio is still under construction, trying to curate my chaos into an order, 
-              it takes time. Do check out my main work though :)"
+
+            <p className="font-display text-lg md:text-xl italic leading-relaxed">
+              “I’m still building, learning, and experimenting — more achievements and fun work are on the way. :)”
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Extra Achievements */}
-      <section className="py-12 md:py-16 bg-cream">
-        <div className="container max-w-4xl mx-auto px-6">
-          <h2 className="font-display text-xl md:text-2xl mb-6 md:mb-8 text-center">More Achievements</h2>
-          <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
-            {[
-              { title: "AIR 320", subtitle: "NID Prelims (25,000+ candidates)" },
-              { title: "AIR 476", subtitle: "UCEED (15,000+ candidates)" },
-              { title: "CGPA 9.17", subtitle: "B.Des at Chitkara University" },
-              { title: "AI Innovation", subtitle: "NewGen Certification" },
-            ].map((achievement, index) => (
-              <motion.div
-                key={achievement.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-4 md:p-5 rounded-xl bg-white shadow-soft flex items-center gap-3 md:gap-4"
-              >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <Trophy className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-display text-base md:text-lg">{achievement.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground">{achievement.subtitle}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
     </Layout>

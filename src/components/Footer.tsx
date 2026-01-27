@@ -52,7 +52,7 @@ export function Footer() {
         
         <div className="mt-8 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Deepal Gupta. Crafted with care.
+            © 2026 Deepal Gupta. Crafted with care.
           </p>
         </div>
       </div>
