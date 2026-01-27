@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { CustomCursor } from "@/components/CustomCursor";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -27,6 +28,7 @@ const ScrollToTop = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <CustomCursor />
       <Toaster />
       <Sonner />
       <BrowserRouter>

@@ -55,10 +55,10 @@ export default function Index() {
   return (
     <Layout>
       {/* ===== HERO SECTION: Introduction ===== */}
-      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-white relative overflow-hidden">
-        {/* Vibrant background accent */}
+      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-gradient-subtle relative overflow-hidden">
+        {/* Subtle background element */}
         <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-lavender via-mint to-transparent blur-3xl pointer-events-none opacity-60"
+          className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-navy/5 blur-3xl pointer-events-none"
           animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -77,7 +77,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy/70 mb-2">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy/60 mb-2">
                   Hey there, I'm
                 </h3>
               </motion.div>
@@ -135,7 +135,7 @@ export default function Index() {
                   >
                     <Button 
                       size="lg" 
-                      className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-coral hover:bg-coral/90 text-white font-semibold"
+                      className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-navy hover:bg-navy/90 text-white"
                     >
                       View My Work
                       <motion.span
@@ -155,7 +155,7 @@ export default function Index() {
                     <Button 
                       size="lg" 
                       variant="outline"
-                      className="rounded-xl border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-white transition-all"
+                      className="rounded-xl border-navy/30 text-navy hover:bg-navy/5"
                     >
                       Let's Talk
                     </Button>
@@ -180,7 +180,7 @@ export default function Index() {
                 transition={{ duration: 6, repeat: Infinity }}
               />
               <motion.div
-                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-coral/40 shadow-soft hover:border-coral/60 transition-colors"
+                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-navy/30 shadow-soft"
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.4 }}
               >
@@ -228,43 +228,39 @@ export default function Index() {
             className="text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed"
           >
             Design is not just about aesthetics—it's about{" "}
-            <span className="text-coral font-semibold">understanding behavior</span>, 
-            <span className="text-mint font-semibold"> questioning assumptions</span>, and 
-            <span className="text-coral font-semibold"> solving real problems</span>. 
+            <span className="text-navy font-medium">understanding behavior</span>, 
+            <span className="text-navy font-medium"> questioning assumptions</span>, and 
+            <span className="text-navy font-medium"> solving real problems</span>. 
             Every pixel, every interaction, every system should have a purpose.
           </motion.p>
 
           <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-            {designValues.map((value, index) => {
-              const colors = ["from-coral/10 to-peach/10", "from-mint/10 to-teal-200/10", "from-lavender/10 to-purple-200/10", "from-peach/10 to-coral/5"];
-              const accentColors = ["text-coral", "text-mint", "text-lavender", "text-coral"];
-              return (
+            {designValues.map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -6 }}
-                className={`relative p-5 md:p-6 rounded-2xl bg-gradient-to-br ${colors[index]} border-2 border-transparent hover:border-coral/30 hover:shadow-card transition-all duration-300 group`}
+                whileHover={{ y: -4 }}
+                className="relative p-5 md:p-6 rounded-2xl bg-gradient-subtle border border-navy/10 hover:border-navy/30 hover:shadow-soft transition-all duration-300 group"
               >
                 {/* Small decorative accent */}
                 <motion.div
-                  className={`absolute top-4 right-4 ${accentColors[index]} group-hover:scale-110 transition-transform`}
+                  className="absolute top-4 right-4 text-navy/20 group-hover:text-coral/40 transition-colors"
                   whileHover={{ rotate: 90 }}
                 >
                   <DoodleCircle className="w-8 h-8" />
                 </motion.div>
 
-                <h3 className={`font-display text-lg md:text-xl mb-2 ${accentColors[index]}`}>
+                <h3 className="font-display text-lg md:text-xl mb-2 text-navy">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
-            );
-            })}
+            ))}
           </div>
         </div>
       </section>
@@ -272,7 +268,7 @@ export default function Index() {
       <SectionDivider accentColor="coral" />
 
       {/* ===== WORK SECTION: Selected Projects ===== */}
-      <section className="py-20 md:py-28 bg-navy/2">
+      <section className="py-20 md:py-28 bg-gradient-subtle">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
             <SectionHeading withDoodle doodleColor="text-navy">
@@ -280,7 +276,7 @@ export default function Index() {
             </SectionHeading>
             <Link
               to="/projects"
-              className="text-sm font-semibold text-coral hover:text-coral/80 transition-colors flex items-center gap-1 group"
+              className="text-sm font-medium text-navy hover:text-navy/70 transition-colors flex items-center gap-1 group"
             >
               View all projects
               <motion.span
@@ -339,7 +335,7 @@ export default function Index() {
 
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
               Whether you have a project in mind, want to collaborate, or just want to chat about design and research—
-              <span className="text-coral font-semibold"> I'd love to hear from you.</span>
+              <span className="text-navy font-medium"> I'd love to hear from you.</span>
             </p>
 
             <motion.div
@@ -356,7 +352,7 @@ export default function Index() {
                 >
                   <Button 
                     size="lg" 
-                    className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-gradient-to-r from-coral via-coral to-peach text-white font-semibold hover:from-coral/90 hover:via-coral/90 hover:to-peach/90"
+                    className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-gradient-to-r from-navy to-navy/80 text-white"
                   >
                     Get in Touch
                     <motion.span
@@ -376,7 +372,7 @@ export default function Index() {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="rounded-xl border-2 border-mint text-mint font-semibold hover:bg-mint hover:text-navy transition-all"
+                    className="rounded-xl border-navy/30 text-navy hover:bg-navy/5"
                   >
                     Download Resume
                   </Button>
