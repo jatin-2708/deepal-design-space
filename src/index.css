@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 217 33% 27%;
 
-    --primary: 217 33% 27%;
+    --primary: 244 53% 15%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 217 33% 27%;
+    --secondary: 285 60% 85%;
+    --secondary-foreground: 244 53% 15%;
 
-    --muted: 210 15% 94%;
-    --muted-foreground: 217 20% 50%;
+    --muted: 280 55% 88%;
+    --muted-foreground: 244 53% 35%;
 
-    --accent: 345 60% 70%;
+    --accent: 11 98% 67%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -36,37 +36,37 @@
 
     --radius: 0.75rem;
 
-    /* Custom tokens - Bold vibrant theme */
-    --navy: 240 35% 15%;
-    --navy-light: 240 35% 95%;
-    --coral: 14 100% 55%;
-    --coral-light: 14 100% 92%;
-    --peach: 45 100% 55%;
-    --mint: 186 100% 50%;
-    --lavender: 291 100% 55%;
-    --cream: 45 30% 97%;
-    --charcoal: 240 35% 15%;
-    --grid-line: 210 10% 92%;
-    --highlight-red: 14 100% 55%;
-    --highlight-blue: 186 100% 50%;
+    /* Custom tokens - Modern Bold Pastel theme */
+    --navy: 244 53% 15%;
+    --navy-light: 244 53% 95%;
+    --coral: 11 98% 67%;
+    --coral-light: 11 100% 92%;
+    --peach: 28 100% 80%;
+    --mint: 174 88% 62%;
+    --lavender: 285 76% 86%;
+    --cream: 0 0% 100%;
+    --charcoal: 244 53% 15%;
+    --grid-line: 280 50% 92%;
+    --highlight-red: 11 98% 67%;
+    --highlight-blue: 174 88% 62%;
 
-    /* Gradients - bold vibrant tones */
-    --gradient-hero: linear-gradient(180deg, hsl(240 35% 15%) 0%, hsl(240 35% 25%) 100%);
-    --gradient-nav: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 35% 98%) 100%);
-    --gradient-card-cyan: linear-gradient(135deg, hsl(186 100% 50%) 0%, hsl(186 100% 45%) 100%);
-    --gradient-card-mint: linear-gradient(135deg, hsl(186 100% 50%) 0%, hsl(291 100% 55%) 100%);
-    --gradient-card-peach: linear-gradient(135deg, hsl(14 100% 55%) 0%, hsl(45 100% 55%) 100%);
-    --gradient-card-lavender: linear-gradient(135deg, hsl(291 100% 55%) 0%, hsl(240 35% 15%) 100%);
+    /* Gradients - Modern bold pastels with vibrant accents */
+    --gradient-hero: linear-gradient(135deg, hsl(244 53% 15%) 0%, hsl(285 76% 40%) 100%);
+    --gradient-nav: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(285 60% 95%) 100%);
+    --gradient-card-cyan: linear-gradient(135deg, hsl(174 88% 62%) 0%, hsl(285 76% 86%) 100%);
+    --gradient-card-mint: linear-gradient(135deg, hsl(174 88% 62%) 0%, hsl(28 100% 80%) 100%);
+    --gradient-card-peach: linear-gradient(135deg, hsl(11 98% 67%) 0%, hsl(28 100% 80%) 100%);
+    --gradient-card-lavender: linear-gradient(135deg, hsl(285 76% 86%) 0%, hsl(11 98% 67%) 100%);
 
     /* Typography */
     --font-display: 'Libre Baskerville', Georgia, serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(217 33% 27% / 0.08);
-    --shadow-card: 0 8px 32px -8px hsl(217 33% 27% / 0.1);
-    --shadow-elevated: 0 16px 48px -12px hsl(217 33% 27% / 0.15);
-    --shadow-nav: 0 4px 24px -4px hsl(217 33% 27% / 0.06);
+    --shadow-soft: 0 4px 20px -4px hsl(244 53% 15% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(244 53% 15% / 0.1);
+    --shadow-elevated: 0 16px 48px -12px hsl(244 53% 15% / 0.15);
+    --shadow-nav: 0 4px 24px -4px hsl(244 53% 15% / 0.06);
   }
 
   .dark {

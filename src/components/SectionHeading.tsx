@@ -25,8 +25,8 @@ export function SectionHeading({
       transition={{ duration: 0.5 }}
       className={className}
     >
-      <h2 className={`font-display text-3xl md:text-4xl text-foreground flex items-center gap-3`}>
-        {icon && <span className="text-navy">{icon}</span>}
+      <h2 className={`font-display text-4xl md:text-5xl font-bold bg-gradient-to-r from-navy via-coral to-mint bg-clip-text text-transparent flex items-center gap-3`}>
+        {icon && <span className="text-coral">{icon}</span>}
         {children}
       </h2>
       {withDoodle && (
