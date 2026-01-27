@@ -56,13 +56,6 @@ export default function Index() {
     <Layout>
       {/* ===== HERO SECTION: Introduction ===== */}
       <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-white relative overflow-hidden">
-        {/* Subtle background element */}
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"
-          animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-
         <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
@@ -72,139 +65,76 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="order-2 lg:order-1"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary/60 mb-2">
-                  Hey there, I'm
-                </h3>
-              </motion.div>
-              <br />
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-              >
-                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-primary relative inline-block">
-                  Deepal Gupta
-                  {/* Decorative underline */}
-                  <motion.div
-                    className="absolute -bottom-2 left-0 text-primary/30"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    style={{ transformOrigin: "left" }}
-                  >
-                    <DoodleUnderline className="w-48 h-6" />
-                  </motion.div>
-                </h1>
-              </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <p className="font-display text-lg md:text-xl text-muted-foreground mb-6">Hello, I'm</p>
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="font-display text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-foreground"
+            >
+              Deepal Gupta
+            </motion.h1>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+              className="font-display text-2xl md:text-3xl font-light text-muted-foreground max-w-2xl mb-8 leading-relaxed"
+            >
+              I design by <span className="text-primary font-medium">thinking things through</span> — sometimes overthinking, always with intention.
+            </motion.h2>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="inline-block px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8 mt-8"
-              >
-                <span className="text-sm font-medium text-primary">UI/UX Designer • Design Thinker</span>
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
-              >
-                I craft meaningful digital experiences through research-driven thinking, 
-                <span className="text-primary font-medium"> thoughtful design</span>, and 
-                <span className="text-primary font-medium"> systems thinking</span>. Every interaction tells a story.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-8 flex flex-col sm:flex-row gap-4"
-              >
-                <Link to="/projects">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button 
-                      size="lg" 
-                      className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-primary hover:bg-primary/90 text-white"
-                    >
-                      View My Work
-                      <motion.span
-                        whileHover={{ x: 4 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ArrowRight className="h-4 w-4" />
-                      </motion.span>
-                    </Button>
-                  </motion.div>
-                </Link>
-                <Link to="/contact">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button 
-                      size="lg" 
-                      variant="outline"
-                      className="rounded-xl border-primary/30 text-primary hover:bg-primary/5"
-                    >
-                      Let's Talk
-                    </Button>
-                  </motion.div>
-                </Link>
-              </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-4 mt-10"
+            >
+              <Link to="/projects">
+                <Button 
+                  size="lg" 
+                  className="rounded-lg gap-2 shadow-soft bg-primary hover:bg-primary/90 text-white font-medium transition-all"
+                >
+                  Explore Case Studies
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="rounded-lg border-primary/30 text-primary hover:border-primary/60 hover:bg-white font-medium transition-all"
+                >
+                  Get in Touch
+                </Button>
+              </Link>
+            </motion.div>
             </motion.div>
 
-            {/* Right - Illustration with animation */}
+            {/* Right - Hero Image */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="order-1 lg:order-2 flex justify-center lg:justify-end group cursor-pointer relative"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
             >
               <motion.div
-                className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-transparent rounded-3xl blur-2xl"
-                animate={{ 
-                  opacity: [0.5, 0.8, 0.5],
-                  scale: [0.95, 1.05, 0.95]
-                }}
-                transition={{ duration: 6, repeat: Infinity }}
-              />
-              <motion.div
-                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-primary/30 shadow-soft"
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.4 }}
+                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-96 lg:h-[28rem] rounded-lg overflow-hidden border border-primary/15 shadow-soft"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
               >
                 {/* Default Image */}
                 <img 
                   src="/images/hero/default.jpeg" 
                   alt="Deepal Gupta - UI/UX Designer" 
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0 z-10 rounded-3xl"
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
                 />
-                {/* Hover Image */}
-                <img 
-                  src="/images/hero/hover.jpeg" 
-                  alt="Deepal Gupta - UI/UX Designer Hover" 
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20 rounded-3xl"
-                />
-
-                {/* Decorative circle */}
-                <motion.div
-                  className="absolute -top-8 -left-8 text-primary/20"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                >
-                  <DoodleCircle className="w-24 h-24" />
-                </motion.div>
               </motion.div>
             </motion.div>
           </div>
@@ -227,11 +157,7 @@ export default function Index() {
             transition={{ duration: 0.6 }}
             className="text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed"
           >
-            Design is not just about aesthetics—it's about{" "}
-            <span className="text-primary font-medium">understanding behavior</span>, 
-            <span className="text-primary font-medium"> questioning assumptions</span>, and 
-            <span className="text-primary font-medium"> solving real problems</span>. 
-            Every pixel, every interaction, every system should have a purpose.
+            Design is not just about making things beautiful—it's about <span className="text-primary font-medium">understanding behavior</span>, questioning assumptions, and solving real problems. Every interaction should serve a purpose.
           </motion.p>
 
           <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
@@ -243,17 +169,9 @@ export default function Index() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="relative p-5 md:p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 hover:shadow-soft transition-all duration-300 group"
+                className="p-5 md:p-6 rounded-lg bg-white border border-primary/10 hover:border-primary/30 hover:shadow-soft transition-all duration-200 group cursor-pointer"
               >
-                {/* Small decorative accent - icon color only */}
-                <motion.div
-                  className="absolute top-4 right-4 text-primary/20 group-hover:text-secondary/60 transition-colors"
-                  whileHover={{ rotate: 90 }}
-                >
-                  <DoodleCircle className="w-8 h-8" />
-                </motion.div>
-
-                <h3 className="font-display text-lg md:text-xl mb-2 text-primary">
+                <h3 className="font-display text-lg md:text-xl mb-2 text-foreground">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

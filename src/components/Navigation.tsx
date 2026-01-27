@@ -65,7 +65,7 @@ export function Navigation() {
                 className={({ isActive }) =>
                   `px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? "text-white bg-navy hover:bg-navy/90"
+                      ? "text-navy bg-navy/10 border border-navy/30 hover:bg-navy/15"
                       : "text-muted-foreground hover:text-navy hover:bg-navy/5"
                   }`
                 }
@@ -120,7 +120,7 @@ export function Navigation() {
                     className={({ isActive }) =>
                       `block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                         isActive
-                          ? "text-primary bg-navy-light"
+                          ? "text-navy bg-navy/10 border border-navy/30"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted"
                       }`
                     }
