@@ -77,7 +77,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary/60 mb-2">
+                <h3 className="font-display text-xl sm:text-1xl md:text-2xl lg:text-2xl text-primary/60 mb-2">
                   Hey there, I'm
                 </h3>
               </motion.div>
