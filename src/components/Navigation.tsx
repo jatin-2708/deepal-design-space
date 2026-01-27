@@ -46,13 +46,13 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6 md:pt-6"
     >
       <nav
-        className={`mx-auto max-w-4xl flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl border border-primary/20 transition-all duration-300 ${
+        className={`mx-auto max-w-4xl flex items-center justify-between px-4 sm:px-6 py-3 rounded-2xl border transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-nav"
-            : "bg-white/80 backdrop-blur-sm shadow-soft"
+            ? "bg-white/95 backdrop-blur-md shadow-nav border-navy/20"
+            : "bg-white/80 backdrop-blur-sm shadow-soft border-navy/10"
         }`}
       >
-        <NavLink to="/" className="font-display text-lg sm:text-xl tracking-tight text-foreground">
+        <NavLink to="/" className="font-display text-lg sm:text-xl tracking-tight text-navy font-semibold hover:text-navy/80 transition-colors">
           DEEPAL
         </NavLink>
 
@@ -65,8 +65,8 @@ export function Navigation() {
                 className={({ isActive }) =>
                   `px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? "text-primary bg-navy-light"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      ? "text-white bg-navy hover:bg-navy/90"
+                      : "text-muted-foreground hover:text-navy hover:bg-navy/5"
                   }`
                 }
               >
@@ -76,22 +76,29 @@ export function Navigation() {
           ))}
           <li className="ml-2">
             <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume">
-              <Button variant="outline" size="sm" className="rounded-xl gap-2 border-primary/20 hover:bg-navy-light">
-                <FileText className="h-4 w-4" />
-                <span className="hidden lg:inline">Resume</span>
-              </Button>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button variant="outline" size="sm" className="rounded-xl gap-2 border-navy/20 text-navy hover:bg-navy/5">
+                  <FileText className="h-4 w-4" />
+                  <span className="hidden lg:inline">Resume</span>
+                </Button>
+              </motion.div>
             </a>
           </li>
         </ul>
 
         {/* Mobile Menu Button */}
-        <button
+        <motion.button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl hover:bg-muted transition-colors"
+          className="md:hidden p-2 rounded-xl hover:bg-navy/5 transition-colors"
           aria-label="Toggle menu"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        </motion.button>
       </nav>
 
       {/* Mobile Menu */}

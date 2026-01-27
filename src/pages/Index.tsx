@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SectionDivider } from "@/components/SectionDivider";
 import { Button } from "@/components/ui/button";
+import { DoodleCircle, DoodleArrow, DoodleUnderline } from "@/components/Doodles";
 import heroIllustration from "@/assets/hero-illustration.png";
 
 const projects = [
@@ -27,7 +29,7 @@ const projects = [
   {
     title: "DYME",
     description: "Worked in rapid sprint cycles under tight deadlines. Balanced feasibility, prioritization, and user needs. Delivered a structured end-to-end user experience.",
-    tags: ["design Project", "Focus and Productivity"],
+    tags: ["Design Project", "Focus and Productivity"],
     gradient: "lavender" as const,
     imageUrl: "/images/projects/dyme.svg",
     slug: "https://drive.google.com/file/d/17CZ4L0qTASLpWalyEg6Z-ZPYHDkLlC3c/view?usp=sharing",
@@ -52,9 +54,16 @@ const designValues = [
 export default function Index() {
   return (
     <Layout>
-      {/* Hero Section - New style matching reference */}
-      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-background">
-        <div className="container max-w-6xl mx-auto px-6">
+      {/* ===== HERO SECTION: Introduction ===== */}
+      <section className="min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 bg-gradient-subtle relative overflow-hidden">
+        {/* Subtle background element */}
+        <motion.div
+          className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-navy/5 blur-3xl pointer-events-none"
+          animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div className="container max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
@@ -63,55 +72,118 @@ export default function Index() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="order-2 lg:order-1"
             >
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground mb-2">
-                Hi, I am
-              </h3>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy/60 mb-2">
+                  Hey there, I'm
+                </h3>
+              </motion.div>
               <br />
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-6">
-                Deepal Gupta
-              </h1>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 text-navy relative inline-block">
+                  Deepal Gupta
+                  {/* Decorative underline */}
+                  <motion.div
+                    className="absolute -bottom-2 left-0 text-navy/40"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    style={{ transformOrigin: "left" }}
+                  >
+                    <DoodleUnderline className="w-48 h-6" />
+                  </motion.div>
+                </h1>
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="inline-block px-5 py-2.5 rounded-full bg-accent/20 text-accent-foreground mb-6"
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="inline-block px-5 py-2.5 rounded-full bg-navy/10 border border-navy/20 text-navy-foreground mb-8 mt-8"
               >
-                <span className="text-sm font-medium text-foreground">UI/UX Designer</span>
+                <span className="text-sm font-medium text-navy">UI/UX Designer • Design Thinker</span>
               </motion.div>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="text-lg md:text-xl text-muted-foreground max-w-lg"
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
               >
-                A multidisciplinary designer crafting meaningful digital experiences through research, strategy, and visual clarity.
+                I craft meaningful digital experiences through research-driven thinking, 
+                <span className="text-navy font-medium"> thoughtful design</span>, and 
+                <span className="text-navy font-medium"> systems thinking</span>. Every interaction tells a story.
               </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="mt-8"
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-8 flex flex-col sm:flex-row gap-4"
               >
                 <Link to="/projects">
-                  <Button size="lg" className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-primary hover:bg-primary/90">
-                    View My Work
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button 
+                      size="lg" 
+                      className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-navy hover:bg-navy/90 text-white"
+                    >
+                      View My Work
+                      <motion.span
+                        whileHover={{ x: 4 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowRight className="h-4 w-4" />
+                      </motion.span>
+                    </Button>
+                  </motion.div>
+                </Link>
+                <Link to="/contact">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      className="rounded-xl border-navy/30 text-navy hover:bg-navy/5"
+                    >
+                      Let's Talk
+                    </Button>
+                  </motion.div>
                 </Link>
               </motion.div>
             </motion.div>
 
-            {/* Right - Illustration Placeholder */}
+            {/* Right - Illustration with animation */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="order-1 lg:order-2 flex justify-center lg:justify-end group cursor-pointer"
+              className="order-1 lg:order-2 flex justify-center lg:justify-end group cursor-pointer relative"
             >
-              <div className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-foreground">
+              <motion.div
+                className="absolute -inset-4 bg-gradient-to-br from-navy/10 via-transparent to-transparent rounded-3xl blur-2xl"
+                animate={{ 
+                  opacity: [0.5, 0.8, 0.5],
+                  scale: [0.95, 1.05, 0.95]
+                }}
+                transition={{ duration: 6, repeat: Infinity }}
+              />
+              <motion.div
+                className="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-[420px] lg:h-[520px] rounded-3xl overflow-hidden border-2 border-navy/30 shadow-soft"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4 }}
+              >
                 {/* Default Image */}
                 <img 
                   src="/images/hero/default.jpeg" 
@@ -124,26 +196,42 @@ export default function Index() {
                   alt="Deepal Gupta - UI/UX Designer Hover" 
                   className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20 rounded-3xl"
                 />
-              </div>
+
+                {/* Decorative circle */}
+                <motion.div
+                  className="absolute -top-8 -left-8 text-navy/20"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <DoodleCircle className="w-24 h-24" />
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Design Values Section */}
-      <section className="py-20 bg-cream">
+      <SectionDivider accentColor="navy" />
+
+      {/* ===== MINDSET SECTION: How I Think ===== */}
+      <section className="py-20 md:py-28 bg-white relative overflow-hidden">
         <div className="container max-w-5xl mx-auto px-6">
-          <SectionHeading className="mb-12">What You’ll Find Here.</SectionHeading>
-          
+          <SectionHeading className="mb-4" withDoodle doodleColor="text-coral">
+            How I Think
+          </SectionHeading>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-lg text-muted-foreground max-w-3xl mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed"
           >
-            This portfolio is not just a collection of projects—it is a designed system. 
-            A system that reflects how I think, how I work, and how I translate complexity 
-            into meaningful user experiences.
+            Design is not just about aesthetics—it's about{" "}
+            <span className="text-navy font-medium">understanding behavior</span>, 
+            <span className="text-navy font-medium"> questioning assumptions</span>, and 
+            <span className="text-navy font-medium"> solving real problems</span>. 
+            Every pixel, every interaction, every system should have a purpose.
           </motion.p>
 
           <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
@@ -154,59 +242,153 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-5 md:p-6 rounded-2xl bg-white shadow-soft hover:shadow-card transition-all"
+                whileHover={{ y: -4 }}
+                className="relative p-5 md:p-6 rounded-2xl bg-gradient-subtle border border-navy/10 hover:border-navy/30 hover:shadow-soft transition-all duration-300 group"
               >
-                <h3 className="font-display text-lg md:text-xl mb-2">{value.title}</h3>
-                <p className="text-muted-foreground text-sm">{value.description}</p>
+                {/* Small decorative accent */}
+                <motion.div
+                  className="absolute top-4 right-4 text-navy/20 group-hover:text-coral/40 transition-colors"
+                  whileHover={{ rotate: 90 }}
+                >
+                  <DoodleCircle className="w-8 h-8" />
+                </motion.div>
+
+                <h3 className="font-display text-lg md:text-xl mb-2 text-navy">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Selected Projects Section */}
-      <section className="py-20">
+      <SectionDivider accentColor="coral" />
+
+      {/* ===== WORK SECTION: Selected Projects ===== */}
+      <section className="py-20 md:py-28 bg-gradient-subtle">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
-            <SectionHeading icon={<Sparkles className="h-6 w-6 md:h-8 md:w-8" />}>
-              Selected Projects
+            <SectionHeading withDoodle doodleColor="text-navy">
+              Selected Work
             </SectionHeading>
             <Link
               to="/projects"
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+              className="text-sm font-medium text-navy hover:text-navy/70 transition-colors flex items-center gap-1 group"
             >
-              View all <ArrowRight className="h-4 w-4" />
+              View all projects
+              <motion.span
+                className="inline-block"
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight className="h-4 w-4" />
+              </motion.span>
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <motion.div
+            className="grid sm:grid-cols-2 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.1,
+                },
+              },
+            }}
+          >
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-peach">
+      <SectionDivider accentColor="lavender" />
+
+      {/* ===== REFLECTION SECTION: CTA & Closing ===== */}
+      <section className="py-20 md:py-28 bg-white relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-lavender/20 blur-3xl -z-10"
+          animate={{ y: [0, 40, 0], x: [0, -30, 0] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+
         <div className="container max-w-3xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4">Currently Open To</h2>
-            <p className="text-muted-foreground mb-8 text-sm sm:text-base">
-              UI/UX Designer roles • Product Designer roles • UX Research opportunities
-              <br className="hidden sm:block" />
-              Freelance, internships, collaborations, and hands-on projects
+            <SectionHeading className="mb-6 justify-center" withDoodle doodleColor="text-mint">
+              Let's Create Something Meaningful
+            </SectionHeading>
+
+            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+              Whether you have a project in mind, want to collaborate, or just want to chat about design and research—
+              <span className="text-navy font-medium"> I'd love to hear from you.</span>
             </p>
-            <Link to="/contact">
-              <Button size="lg" className="rounded-xl gap-2 shadow-soft hover:shadow-card">
-                Get in Touch
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Link to="/contact">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button 
+                    size="lg" 
+                    className="rounded-xl gap-2 shadow-soft hover:shadow-card bg-gradient-to-r from-navy to-navy/80 text-white"
+                  >
+                    Get in Touch
+                    <motion.span
+                      whileHover={{ x: 4 }}
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </motion.span>
+                  </Button>
+                </motion.div>
+              </Link>
+
+              <a href="https://drive.google.com/file/d/19Jiq8guF84KuFKCMQiUD50DAzMpVXEbc/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="rounded-xl border-navy/30 text-navy hover:bg-navy/5"
+                  >
+                    Download Resume
+                  </Button>
+                </motion.div>
+              </a>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-12 text-sm text-muted-foreground"
+            >
+              💭 <em>"Design thinking is a mindset. It's about asking better questions."</em>
+            </motion.p>
           </motion.div>
         </div>
       </section>

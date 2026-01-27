@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Instrument Serif', 'Georgia', 'serif'],
+        display: ['Libre Baskerville', 'Georgia', 'serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
@@ -82,6 +82,16 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-nav": "var(--gradient-nav)",
+        "gradient-card-cyan": "var(--gradient-card-cyan)",
+        "gradient-card-mint": "var(--gradient-card-mint)",
+        "gradient-card-peach": "var(--gradient-card-peach)",
+        "gradient-card-lavender": "var(--gradient-card-lavender)",
+        "gradient-accent": "linear-gradient(135deg, hsl(210 100% 45%) 0%, hsl(200 85% 55%) 100%)",
+        "gradient-subtle": "linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 15% 97%) 100%)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -99,12 +109,27 @@ export default {
           "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
           "50%": { transform: "translateY(-6px) rotate(2deg)" },
         },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(12, 76, 161, 0.3)" },
+          "50%": { boxShadow: "0 0 30px rgba(12, 76, 161, 0.5)" },
+        },
+        "draw-line": {
+          "0%": { strokeDashoffset: "1000" },
+          "100%": { strokeDashoffset: "0" },
+        },
+        "bounce-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 4s ease-in-out infinite",
         "float-slow": "float-slow 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "draw-line": "draw-line 2s ease-in-out forwards",
+        "bounce-slow": "bounce-slow 3s ease-in-out infinite",
       },
     },
   },

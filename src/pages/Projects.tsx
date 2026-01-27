@@ -24,7 +24,7 @@ const projects = [
   {
     title: "DYME",
     description: "Worked in rapid sprint cycles under tight deadlines. Balanced feasibility, prioritization, and user needs. Delivered a structured end-to-end user experience.",
-    tags: ["design Project", "Focus and Productivity"],
+    tags: ["Design Project", "Focus and Productivity"],
     gradient: "lavender" as const,
     imageUrl: "/images/projects/dyme.svg",
     slug: "https://drive.google.com/file/d/17CZ4L0qTASLpWalyEg6Z-ZPYHDkLlC3c/view?usp=sharing",
@@ -61,7 +61,7 @@ export default function Projects() {
 
       <section className="py-12 md:py-16">
         <div className="container max-w-6xl mx-auto px-6">
-          <SectionHeading icon={<Sparkles className="h-6 w-6 md:h-8 md:w-8" />} className="mb-8 md:mb-12">
+          <SectionHeading className="mb-8 md:mb-12">
             Selected Projects
           </SectionHeading>
 
