@@ -13,7 +13,7 @@ const contactLinks = [
     value: "gdeepal190404@gmail.com",
     href: "mailto:gdeepal190404@gmail.com",
     icon: null,
-    image: "/icons/gmail.svg",
+    image: "/icons/gmail.png",
   },
   {
     title: "LinkedIn",
@@ -79,19 +79,30 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-white shadow-soft hover:shadow-card transition-all group"
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-3 md:gap-4 p-4 md:p-5 rounded-xl bg-white border border-primary/10 shadow-soft hover:shadow-card hover:border-primary/30 transition-all group cursor-pointer"
                   >
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-navy-light flex items-center justify-center group-hover:bg-primary transition-colors">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 flex-shrink-0">
                       {link.image ? (
-                        <img src={link.image} alt={link.title} className="h-4 w-4 md:h-5 md:w-5" />
+                        <img src={link.image} alt={link.title} className="h-8 w-8 transition-all duration-300" />
                       ) : (
-                        <link.icon className="h-4 w-4 md:h-5 md:w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                        <link.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" />
                       )}
                     </div>
-                    <div className="min-w-0">
-                      <p className="font-medium text-foreground text-sm md:text-base">{link.title}</p>
-                      <p className="text-xs md:text-sm text-muted-foreground truncate">{link.value}</p>
+                    <div className="min-w-0 flex-grow">
+                      <p className="font-medium text-foreground text-sm md:text-base group-hover:text-primary transition-colors duration-200">{link.title}</p>
+                      <p className="text-xs md:text-sm text-muted-foreground group-hover:text-foreground truncate transition-colors duration-200">{link.value}</p>
                     </div>
+                    <motion.div
+                      className="text-muted-foreground group-hover:text-primary transition-colors duration-200"
+                      animate={{ x: 0 }}
+                      whileHover={{ x: 4 }}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </motion.div>
                   </motion.a>
                 ))}
               </div>

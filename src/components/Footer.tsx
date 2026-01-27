@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+
 // Footer component
 export function Footer() {
   const socialLinks = [
     {
       href: "mailto:gdeepal190404@gmail.com",
-      image: "/icons/gmail.svg",
+      image: "/icons/gmail.png",
       alt: "Email",
     },
     {
@@ -33,15 +35,17 @@ export function Footer() {
           
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.alt}
                 href={link.href}
                 target={link.target}
                 rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
-                className="p-3 rounded-xl bg-white shadow-soft hover:shadow-card transition-all duration-200"
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.95 }}
+                className="p-3 rounded-xl bg-white border border-primary/10 shadow-soft hover:shadow-card hover:border-primary/30 transition-all duration-200 group cursor-pointer"
               >
-                <img src={link.image} alt={link.alt} className="h-5 w-5" />
-              </a>
+                <img src={link.image} alt={link.alt} className="h-8 w-8" />
+              </motion.a>
             ))}
           </div>
         </div>
