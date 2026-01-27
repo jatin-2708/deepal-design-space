@@ -16,7 +16,7 @@ const projects = [
     tags: ["Interaction Design", "In-campus Printing process"],
     gradient: "cyan" as const,
     imageUrl: "/images/projects/printfast.svg",
-    slug: "https://drive.google.com/file/d/1WriCy9rQsnzT66NbNkATrZ6a6kKtAQO5/view?usp=sharing",
+    slug: "/images/case_studies/pfast.svg",
   },
   {
     title: "COOUP",
