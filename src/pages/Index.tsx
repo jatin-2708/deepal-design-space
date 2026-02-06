@@ -348,21 +348,6 @@ export default function Index() {
                   </Button>
                 </motion.div>
               </Link>
-
-              <a href="https://drive.google.com/file/d/16Jas58zYzuyluYckUd_Dl2Y_vmJco6l5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="rounded-xl border-primary/30 text-primary hover:bg-primary/5"
-                  >
-                    Download Resume
-                  </Button>
-                </motion.div>
-              </a>
             </motion.div>
 
             <motion.p

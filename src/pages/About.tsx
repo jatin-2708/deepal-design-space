@@ -202,7 +202,7 @@ export default function About() {
           >
             <h3 className="font-display text-lg md:text-xl mb-1">Bachelor of Design (B.Des) — UI/UX Design</h3>
             <p className="text-muted-foreground mb-2 text-sm md:text-base">Chitkara University, Chandigarh</p>
-            <p className="text-xs md:text-sm text-muted-foreground">2023 – 2027 | CGPA: 9.17 / 10</p>
+            <p className="text-xs md:text-sm text-muted-foreground">2023 – 2027 | CGPA: 9.2 / 10 </p>
           </motion.div>
         </div>
       </section>
