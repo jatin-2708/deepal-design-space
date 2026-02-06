@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { DoodleBracket } from "./Doodles";
 
 interface ProjectCardProps {
   title: string;
@@ -50,45 +49,52 @@ export function ProjectCard({
         whileHover={{ opacity: 1 }}
       />
 
-      {/* Doodle accent top-right */}
-      <motion.div
-        className="absolute -top-8 -right-8 text-primary/10 group-hover:text-primary/20 transition-colors relative z-0"
-        whileHover={{ rotate: 45 }}
-        transition={{ duration: 0.4 }}
-      >
-        <DoodleBracket className="w-20 h-20" />
-      </motion.div>
+      {/* Header: Title and Tags */}
+      <div className="flex items-start justify-between gap-3 mb-3 relative z-10">
+        {/* Title */}
+        <h3 className="font-display text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors duration-300 flex-shrink-0">
+          {title}
+        </h3>
 
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 mb-4 relative z-10">
-        {tags.map((tag, idx) => (
-          <motion.span
-            key={tag}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.05 }}
-            className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/80 text-foreground border border-primary/20 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-200"
-          >
-            {tag}
-          </motion.span>
-        ))}
-        {award && (
-          <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-primary/15 text-primary border border-primary/30">
-            🏆 Award Winner
-          </span>
-        )}
-        {comingSoon && (
-          <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-muted text-muted-foreground">
-            Coming Soon
-          </span>
-        )}
+        {/* Tags on the right */}
+        <div className="flex flex-wrap gap-1 flex-shrink-0 justify-end cursor-pointer">
+          {tags.map((tag, idx) => (
+            <motion.span
+              key={tag}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
+              whileHover={{
+                scale: 1.08,
+              }}
+              className="px-2 py-1 text-xs font-medium rounded-full bg-white/80 text-foreground border border-primary/20 transition-all duration-200 text-right"
+            >
+              {tag}
+            </motion.span>
+          ))}
+          {award && (
+            <motion.span
+              whileHover={{
+                scale: 1.08,
+              }}
+              className="px-2 py-1 text-xs font-medium rounded-full bg-primary/15 text-primary border border-primary/30 text-right transition-all duration-200"
+            >
+              🏆 Award Winner
+            </motion.span>
+          )}
+          {comingSoon && (
+            <motion.span
+              whileHover={{
+                scale: 1.08,
+              }}
+              className="px-2 py-1 text-xs font-medium rounded-full bg-muted text-muted-foreground text-right transition-all duration-200"
+            >
+              Coming Soon
+            </motion.span>
+          )}
+        </div>
       </div>
-
-      {/* Title */}
-      <h3 className="font-display text-xl md:text-2xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300 relative z-10">
-        {title}
-      </h3>
 
       {/* Description */}
       <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow group-hover:text-foreground transition-colors duration-200 relative z-10">

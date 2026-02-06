@@ -38,7 +38,7 @@ const wallItems = [
     color: "bg-gradient-mint",
     rotation: -2,
     image: "/images/wall/florafusion.svg",
-    slug: "https://drive.google.com/file/d/1bsLM722bkmXubfYt1pmdABXnEfDygvTj/view?usp=sharing",
+    slug: "https://www.behance.net/gallery/223392939/Flora-Fusion-Speculative-Design-Packaging",
   },
   {
     title: "Infographics",
@@ -47,7 +47,7 @@ const wallItems = [
     color: "bg-gradient-lavender",
     rotation: 5,
     image: "/images/wall/datavis.svg",
-    slug: "https://drive.google.com/file/d/1B_A7d7xOQ-OTZzYyz4fpTZznhKaRq4TF/view?usp=sharing",
+    slug: "https://www.behance.net/gallery/230286269/Infographic-Posters",
   },
 ];
 
@@ -114,22 +114,24 @@ export default function Wall() {
                   </p>
 
                   {/* Image (UNCROPPED) */}
-                  <div className="mt-auto w-full aspect-square rounded-lg bg-white/60 border border-border/30 overflow-hidden mb-2">
-                    {item.image ? (
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-contain"
-                      />
-                    ) : (
-                      <div className="h-full flex flex-col items-center justify-center">
-                        <ImageIcon className="h-4 w-4 mb-1 text-muted-foreground/40" />
-                        <p className="text-xs text-muted-foreground/50">
-                          Add image
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                  <Link to={item.slug} className="mt-auto w-full aspect-square rounded-lg bg-white/60 border border-border/30 overflow-hidden mb-2 cursor-pointer hover:opacity-80 transition-opacity">
+                    <div className="w-full h-full">
+                      {item.image ? (
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-contain"
+                        />
+                      ) : (
+                        <div className="h-full flex flex-col items-center justify-center">
+                          <ImageIcon className="h-4 w-4 mb-1 text-muted-foreground/40" />
+                          <p className="text-xs text-muted-foreground/50">
+                            Add image
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </Link>
 
                   {/* Link */}
                   <Link

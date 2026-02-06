@@ -16,7 +16,7 @@ const projects = [
     tags: ["Interaction Design", "In-campus Printing process"],
     gradient: "cyan" as const,
     imageUrl: "/images/projects/printfast.svg",
-    slug: "/images/case_studies/pfast.svg",
+    slug: "https://www.behance.net/gallery/243673033/Printfast-Campus-Printing-Platform",
   },
   {
     title: "COOUP",
@@ -24,7 +24,7 @@ const projects = [
     tags: ["Service Design", "Wellness and Community"],
     gradient: "peach" as const,
     imageUrl: "/images/projects/cooup.svg",
-    slug: "https://drive.google.com/file/d/16oX0ezLTgCoCLtnoCoXMvUZOJ4aFctzM/view?usp=sharing",
+    slug: "https://www.behance.net/gallery/243673893/Cooup-Wellness-Service-Platform",
   },
   {
     title: "DYME",
@@ -40,7 +40,7 @@ const projects = [
     tags: ["Omnichannel", "Cash Transaction"],
     gradient: "mint" as const,
     imageUrl: "/images/projects/sakha.svg",
-    slug: "https://drive.google.com/file/d/17sockccBBNFOkkff897N6cgS0HJPBmMz/view?usp=sharing",
+    slug: "https://www.behance.net/gallery/243435877/Sakha-banking-omnichannel-banking-experience",
   },
 ];
 
@@ -147,20 +147,6 @@ export default function Index() {
                     </Button>
                   </motion.div>
                 </Link>
-                <Link to="/contact">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button 
-                      size="lg" 
-                      variant="outline"
-                      className="rounded-xl border-primary/30 text-primary hover:bg-primary/5"
-                    >
-                      Let's Talk
-                    </Button>
-                  </motion.div>
-                </Link>
               </motion.div>
             </motion.div>
 
@@ -227,7 +213,7 @@ export default function Index() {
             transition={{ duration: 0.6 }}
             className="text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed"
           >
-            Design is not just about aesthetics—it's about{" "}
+            Design is not just about aesthetics, it's about{" "}
             <span className="text-primary font-medium">understanding behavior</span>, 
             <span className="text-primary font-medium"> questioning assumptions</span>, and 
             <span className="text-primary font-medium"> solving real problems</span>. 

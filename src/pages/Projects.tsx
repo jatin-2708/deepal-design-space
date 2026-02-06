@@ -11,7 +11,7 @@ const projects = [
     tags: ["Interaction Design", "In-campus Printing process"],
     gradient: "cyan" as const,
     imageUrl: "/images/projects/printfast.svg",
-    slug: "/images/case_studies/pfast.svg",
+    slug: "https://www.behance.net/gallery/243673033/Printfast-Campus-Printing-Platform",
   },
   {
     title: "COOUP",
@@ -19,7 +19,7 @@ const projects = [
     tags: ["Service Design", "Wellness and Community"],
     gradient: "peach" as const,
     imageUrl: "/images/projects/cooup.svg",
-    slug: "https://drive.google.com/file/d/16oX0ezLTgCoCLtnoCoXMvUZOJ4aFctzM/view?usp=sharing",
+    slug: "https://www.behance.net/gallery/243673893/Cooup-Wellness-Service-Platform",
   },
   {
     title: "DYME",
@@ -35,7 +35,7 @@ const projects = [
     tags: ["Omnichannel", "Cash Transaction"],
     gradient: "mint" as const,
     imageUrl: "/images/projects/sakha.svg",
-    slug: "https://drive.google.com/file/d/17sockccBBNFOkkff897N6cgS0HJPBmMz/view?usp=sharing",
+    slug: "https://www.behance.net/gallery/243435877/Sakha-banking-omnichannel-banking-experience",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function Projects() {
           >
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl mb-4">My Work</h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              Each project is presented as a problem-solving journey—from understanding 
+              Each project is presented as a problem-solving journey, from understanding 
               users and contexts, to defining structure, making informed decisions, 
               and validating outcomes.
             </p>

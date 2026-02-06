@@ -98,15 +98,26 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-family: var(--font-body);
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="rgba(12,76,161,0.6)" stroke-width="1.5"/><circle cx="10" cy="10" r="3" fill="rgba(12,76,161,0.4)"/></svg>') 10 10, auto;
+    cursor: auto;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
 
-  a, button {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="rgba(12,76,161,0.8)" stroke-width="1.5"/><circle cx="10" cy="10" r="3" fill="rgba(12,76,161,0.6)"/></svg>') 10 10, auto;
+  a, button, [role="button"], .cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* Pointer cursor for all clickable elements */
+  a:hover, button:hover, [role="button"]:hover, .cursor-pointer:hover {
+    cursor: pointer;
+  }
+
+  /* Keep pointer cursor on resume button */
+  .keep-cursor-black,
+  .keep-cursor-black:hover {
+    cursor: pointer !important;
   }
 }
 
@@ -172,6 +183,15 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Cursor pointer class for interactive elements */
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .cursor-pointer:hover {
+    cursor: pointer;
   }
 
   /* Enhanced button styling for interactive personality */

@@ -75,12 +75,12 @@ export function Navigation() {
             </li>
           ))}
           <li className="ml-2">
-            <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume">
+            <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume" className="keep-cursor-black">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button variant="outline" size="sm" className="rounded-xl gap-2 border-navy/20 text-navy hover:bg-navy/5">
+                <Button variant="outline" size="sm" className="rounded-xl gap-2 border-navy/20 text-navy hover:bg-primary hover:text-white hover:border-primary transition-all duration-200">
                   <FileText className="h-4 w-4" />
                   <span className="hidden lg:inline">Resume</span>
                 </Button>
@@ -130,8 +130,8 @@ export function Navigation() {
                 </li>
               ))}
               <li className="mt-2 pt-2 border-t border-border">
-                <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume" className="block">
-                  <Button variant="outline" size="sm" className="w-full rounded-xl gap-2 border-primary/20">
+                <a href={RESUME_LINK} target="_blank" rel="noopener noreferrer" aria-label="Open resume" className="block keep-cursor-black">
+                  <Button variant="outline" size="sm" className="w-full rounded-xl gap-2 border-primary/20 hover:bg-primary hover:text-white hover:border-primary transition-all duration-200">
                     <FileText className="h-4 w-4" />
                     Resume
                   </Button>
