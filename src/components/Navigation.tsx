@@ -5,7 +5,7 @@ import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Example Google Drive link for the resume. Replace with your actual Google Drive resume link.
-const RESUME_LINK = "https://drive.google.com/file/d/19Jiq8guF84KuFKCMQiUD50DAzMpVXEbc/view?usp=sharing";
+const RESUME_LINK = "https://drive.google.com/file/d/16Jas58zYzuyluYckUd_Dl2Y_vmJco6l5/view?usp=sharing";
 
 const navItems = [
   { label: "Home", path: "/" },
