@@ -349,7 +349,7 @@ export default function Index() {
                 </motion.div>
               </Link>
 
-              <a href="https://drive.google.com/file/d/19Jiq8guF84KuFKCMQiUD50DAzMpVXEbc/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/16Jas58zYzuyluYckUd_Dl2Y_vmJco6l5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}

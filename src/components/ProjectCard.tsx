@@ -49,52 +49,49 @@ export function ProjectCard({
         whileHover={{ opacity: 1 }}
       />
 
-      {/* Header: Title and Tags */}
-      <div className="flex items-start justify-between gap-3 mb-3 relative z-10">
-        {/* Title */}
-        <h3 className="font-display text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors duration-300 flex-shrink-0">
-          {title}
-        </h3>
-
-        {/* Tags on the right */}
-        <div className="flex flex-wrap gap-1 flex-shrink-0 justify-end cursor-pointer">
-          {tags.map((tag, idx) => (
-            <motion.span
-              key={tag}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              whileHover={{
-                scale: 1.08,
-              }}
-              className="px-2 py-1 text-xs font-medium rounded-full bg-white/80 text-foreground border border-primary/20 transition-all duration-200 text-right"
-            >
-              {tag}
-            </motion.span>
-          ))}
-          {award && (
-            <motion.span
-              whileHover={{
-                scale: 1.08,
-              }}
-              className="px-2 py-1 text-xs font-medium rounded-full bg-primary/15 text-primary border border-primary/30 text-right transition-all duration-200"
-            >
-              🏆 Award Winner
-            </motion.span>
-          )}
-          {comingSoon && (
-            <motion.span
-              whileHover={{
-                scale: 1.08,
-              }}
-              className="px-2 py-1 text-xs font-medium rounded-full bg-muted text-muted-foreground text-right transition-all duration-200"
-            >
-              Coming Soon
-            </motion.span>
-          )}
-        </div>
+      {/* Tags on top */}
+      <div className="flex flex-wrap gap-1 mb-3 cursor-pointer relative z-10">
+        {tags.map((tag, idx) => (
+          <motion.span
+            key={tag}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.05 }}
+            whileHover={{
+              scale: 1.08,
+            }}
+            className="px-2 py-1 text-xs font-medium rounded-full bg-white/80 text-foreground border border-primary/20 transition-all duration-200"
+          >
+            {tag}
+          </motion.span>
+        ))}
+        {award && (
+          <motion.span
+            whileHover={{
+              scale: 1.08,
+            }}
+            className="px-2 py-1 text-xs font-medium rounded-full bg-primary/15 text-primary border border-primary/30 transition-all duration-200"
+          >
+            🏆 Award Winner
+          </motion.span>
+        )}
+        {comingSoon && (
+          <motion.span
+            whileHover={{
+              scale: 1.08,
+            }}
+            className="px-2 py-1 text-xs font-medium rounded-full bg-muted text-muted-foreground transition-all duration-200"
+          >
+            Coming Soon
+          </motion.span>
+        )}
       </div>
+
+      {/* Title */}
+      <h3 className="font-display text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors duration-300 mb-3 relative z-10">
+        {title}
+      </h3>
 
       {/* Description */}
       <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow group-hover:text-foreground transition-colors duration-200 relative z-10">
